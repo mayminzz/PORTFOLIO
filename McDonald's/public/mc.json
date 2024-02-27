@@ -1,0 +1,66 @@
+{
+  "contents": [
+    {
+      "img": "./img/live_img1.jpeg",
+      "description": "미트칠리 버거와 연말을 더 특별하게",
+      "alt": "pic01"
+    },
+    {
+      "img": "./img/live_img2.jpeg",
+      "description": "신선한 토마토와 매콤한 소스의 만남!",
+      "alt": "pic02"
+    },
+    {
+      "img": "./img/live_img3.jpeg",
+      "description": "갓성비 간식 맛집,맥도날드 해피 스낵!",
+      "alt": "pic03"
+    },
+    {
+      "img": "./img/live_img4.jpeg",
+      "description": "맥도날드 M오더",
+      "alt": "pic04"
+    },
+    {
+      "img": "./img/live_img5.jpeg",
+      "description": "빠삭하게 빠져드는 맛, <br/> 맥크리스피!",
+      "alt": "pic05"
+    },
+    {
+      "img": "./img/live_img6.jpeg",
+      "description": "갓 구워내 따뜻하고 신선한 <br/> 베이컨 토마토 에그 머핀!",
+      "alt": "pic06"
+    }
+  ],
+  "moreContents": [
+    {
+      "img": "./img/live_img7.jpeg",
+      "description": "상콤달콤! <br> NEW 자두 천도복숭아 칠러 출시!",
+      "alt":"pic07"
+    },
+    {
+      "img": "./img/live_img8.jpeg",
+      "description": "맥도날드와 함께 성장할 <br> 크루와 매니저를 찾습니다",
+      "alt":"pic08"
+    },
+    {
+      "img": "./img/live_img9.jpeg",
+      "description": "첫 적립 시 2000 포인트 제공 <br> 새로워진 마이맥도날드 리워드!",
+      "alt":"pic09"
+    },
+    {
+      "img": "./img/live_img10.png",
+      "description": "우리가 엄격해질수록 <br> 버거는 더 맛있어지니까!",
+      "alt":"pic10"
+    },
+    {
+      "img": "./img/live_img11.jpeg",
+      "description": "0.1초에 1잔!<br> 매일 마시는 커피를 더 맛있게",
+      "alt":"pic11"
+    },
+    {
+      "img": "./img/live_img12.jpeg",
+      "description": "전문코치들의 체계적이고 전문적인 <br> 교육을 통해 지역사회 행복을 기여합니다",
+      "alt":"pic12"
+    }
+  ]
+}

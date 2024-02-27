@@ -1,0 +1,27 @@
+[
+  {
+    "src": "./img/trend_item1.png",
+    "name": "픽싱 틴트",
+    "price": "12,000원"
+  },
+  {
+    "src": "./img/trend_item2.png",
+    "name": "플레이 컬러 아이즈",
+    "price": "30,000원"
+  },
+  {
+    "src": "./img/trend_item3.png",
+    "name": "컬 픽스 마스카라",
+    "price": "15,000원"
+  },
+  {
+    "src": "./img/trend_item4.png",
+    "name": "그림자 쉐딩",
+    "price": "20,000원"
+  },
+  {
+    "src": "./img/trend_item5.png",
+    "name": "순정 시카 카밍 앰플 에센스",
+    "price": "29,000원"
+  }
+]

@@ -1,0 +1,13 @@
+//Javascript
+
+//header
+position:fixed 
+스크롤 내리면 따라내려오기 + 색도 바뀜 
+(scroll 이벤트를 이용)
+
+//page1
+무한 슬라이드 + 밑에 구분선 bar
+
+//page2
+json으로 불러오기 (일정한 구조)
+

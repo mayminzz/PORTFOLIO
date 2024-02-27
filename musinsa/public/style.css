@@ -1,0 +1,393 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+#login_wrapper {
+  width: 100%;
+  height: 100%;
+  background: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* common css */
+.container {
+  width: 445px;
+  height: 100vh;
+  background: #fff;
+  padding: 0 35px;
+  position: relative;
+}
+/* header */
+.common_header {
+  width: 375px;
+  background: #fff;
+  position: fixed;
+  z-index: 9;
+}
+.common_header .header_top {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.common_header .prev_btn {
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+}
+.common_header h2 {
+  font-size: 16px;
+  font-weight: normal;
+}
+.common_header .switch {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+}
+.common_header .switch a {
+  width: 50%;
+  text-align: center;
+  line-height: 45px;
+  color: #b3b3b3;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+}
+.common_header .switch a.active {
+  color: #000;
+}
+.switch a::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #b3b3b3;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.switch a.active::before {
+  background: #000;
+  height: 2px;
+}
+
+/* member login section */
+.member_login_section {
+  width: 100%;
+  height: 341px;
+  padding: 0 15px;
+  margin-top: 110px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.member_login_section input {
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.member_login_section input:focus {
+  border: 1px solid #929292;
+}
+.member_login_section input[type="submit"] {
+  height: 50px;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 16px 15px 16px;
+  margin-top: 10px;
+}
+.member_login_section .login_util {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.member_login_section .login_util .auto {
+  position: relative;
+}
+.member_login_section .login_util label[for="autoCheckbox"] {
+  padding-left: 30px;
+  font-size: 14px;
+  position: relative;
+  cursor: pointer;
+}
+.member_login_section .login_util label[for="autoCheckbox"]::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #f1f1f1;
+  position: absolute;
+  left: 0;
+  top: -4px;
+  transition: 0.3s;
+}
+.member_login_section .login_util label[for="autoCheckbox"].checked::before {
+  content: "\f00c";
+  font-family: fontawesome;
+  font-size: 10px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  background: #0078ff;
+  border: 1px solid #0078ff;
+}
+.member_login_section .login_util .auto > span {
+  display: none;
+}
+.member_login_section .login_util .auto > span.visible {
+  display: block;
+  width: 245px;
+  height: 30px;
+  font-size: 11px;
+  color: #fff;
+  background: #0078ff;
+  border-radius: 4px;
+  padding: 9px 7px 6px;
+  position: absolute;
+  left: 0;
+  bottom: -25px;
+  opacity: 0;
+  animation: downAppear 0.2s linear both;
+}
+.member_login_section .login_util .auto span.visible::before {
+  content: "";
+  display: block;
+  width: 7px;
+  height: 7px;
+  background: #0078ff;
+  transform: rotate(45deg);
+  position: absolute;
+  top: -3px;
+}
+@keyframes downAppear {
+  0% {
+    bottom: -25px;
+  }
+  100% {
+    opacity: 1;
+    bottom: -35px;
+  }
+}
+.member_login_section .login_util .search a {
+  font-size: 14px;
+  color: #aaa;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.member_login_section .login_util .search a:nth-child(2) {
+  position: relative;
+}
+.member_login_section .login_util .search a:nth-child(2)::before {
+  content: "";
+  width: 1px;
+  height: 14px;
+  background: #d8d8d8;
+  font-size: 14px;
+  margin-right: 10px;
+  position: absolute;
+  top: 0px;
+  left: -7px;
+}
+.member_login_section .social_login a {
+  display: block;
+  width: 100%;
+  height: 45px;
+  padding: 14px 16px 10px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.member_login_section .social_login .kakao_login {
+  background: #fee500;
+  border: 1px solid #fee500;
+  margin-top: 27px;
+}
+.member_login_section .social_login .kakao_login img {
+  width: 18px;
+  margin-right: 8px;
+}
+.member_login_section .social_login .apple_login {
+  background: #fff;
+  border: 1px solid #bfbfbf;
+  margin-top: 13px;
+}
+.member_login_section .social_login .apple_login img {
+  width: 16px;
+  margin-top: -5px;
+  margin-right: 8px;
+}
+
+/* nomember login section */
+.nomember_search_section {
+  display: none;
+}
+.nomember_search_section {
+  width: 100%;
+  height: 270px;
+  padding: 0 15px;
+  margin-top: 100px;
+}
+.nomember_search_section form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.nomember_search_section form label {
+  font-size: 14px;
+  padding: 16px 0px 2px;
+}
+.nomember_search_section form input {
+  width: 100%;
+  height: 48px;
+  font-size: 15px;
+  padding: 0 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  outline: none;
+}
+.nomember_search_section form input:focus {
+  border-color: #929292;
+}
+.nomember_search_section form input[type="submit"] {
+  height: 50px;
+  background: #f3f3f3;
+  color: #b3b3b3;
+  font-weight: bold;
+  border: none;
+  margin-top: 10px;
+}
+/* sign_up section */
+.sign_up {
+  margin-top: 28px;
+  text-align: center;
+}
+.sign_up p {
+  color: #0078ff;
+  font-size: 15px;
+  margin-right: 90px;
+  position: relative;
+}
+.sign_up p span {
+  width: 66px;
+  border: 1px solid #0078ff;
+  border-radius: 4px;
+  padding: 5px 4px;
+  position: absolute;
+  top: -10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+/* sign up modal */
+.sign_up_modal {
+  display: none;
+}
+.sign_up_modal.showModal {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  z-index: 9999;
+  width: 310px;
+  height: 240px;
+  background: #fff;
+  border: 1px solid #dfdfdf;
+}
+.sign_up_modal .delBtn {
+  width: 16px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.sign_up_modal .sns_box {
+  width: 100%;
+  height: 85%;
+  padding: 20px;
+  margin-top: 25px;
+  text-align: center;
+}
+.sign_up_modal .sns_box a {
+  display: block;
+  width: 100%;
+  height: 45px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 15px 16px 11px;
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sign_up_modal .sns_box .musinsa {
+  background: #000;
+  color: #fff;
+}
+.sign_up_modal .sns_box .kakao {
+  background: #fee500;
+  border: 1px solid #fee500;
+  color: #000;
+}
+.sign_up_modal .sns_box .kakao img {
+  width: 18px;
+  margin-right: 5px;
+}
+.sign_up_modal .sns_box .apple {
+  background: fff;
+  color: #000;
+  border: 1px solid #bfbfbf;
+}
+.sign_up_modal .sns_box .apple img {
+  width: 16px;
+  margin-right: 5px;
+  margin-top: -5px;
+}
+/* 모달 창 클릭시 뒤 배경화면 스타일 */
+#login_wrapper.darkBg::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  background: rgba(0,0,0,.4);
+}
