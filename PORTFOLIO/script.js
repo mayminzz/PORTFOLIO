@@ -24,6 +24,31 @@ gnbLi.forEach((li) => {
   });
 });
 
+//home
+const spanElements = document.querySelectorAll(".title_text > span");
+const count = spanElements.length;
+const delay = 0.2;
+
+const spanList = (numbers) => {
+  spanElements.forEach((spanElement, index) => {
+    spanElement.style.animationDelay = `${numbers[index]}s`;
+  });
+};
+const titleTxt = document.querySelector(".title+text");
+
+// if (innerWidth < 610) {
+//   titleTxt.innerHTML = `</>`;
+// }
+
+const delayplus = () => {
+  let Delayarr = [];
+  for (let i = 0; i < count; i++) {
+    Delayarr.push(i / 5);
+  }
+  spanList(Delayarr);
+};
+delayplus();
+
 // project_sec slide
 const sliderWrapper = document.querySelector(".slideContainer");
 const slideContainer = document.querySelector(".slider_projects");
@@ -121,6 +146,12 @@ for (let modal of modals) {
       .querySelector("a")
       .getAttribute("href");
 
+    const figmaLink = e.currentTarget.parentNode
+      .querySelector(".figmaView button a")
+      .getAttribute("href");
+
+    console.log(figmaLink);
+
     const dataIdx = e.currentTarget.getAttribute("data-idx");
 
     if (dataIdx === "0") {
@@ -140,6 +171,9 @@ for (let modal of modals) {
     aside.querySelector(".overview > p").innerHTML = overview;
     aside.querySelector(".work_info").innerHTML = workInfo;
     aside.querySelector(".aLink > a").setAttribute("href", aLink);
+    aside
+      .querySelector(".buttons .figmaView a")
+      .setAttribute("href", figmaLink);
     aside.classList.add("on");
     main.classList.add("invisible");
 
@@ -149,6 +183,21 @@ for (let modal of modals) {
     });
   });
 }
+
+//work
+const resultTxt = document.querySelector(".work_desc p");
+const tabItem = document.querySelectorAll(".tab_content");
+
+tabItem.forEach((item) => {
+  item.addEventListener("mouseenter", (e) => {
+    let eventItemTxt = e.currentTarget.querySelector("p").innerHTML;
+    resultTxt.classList.add("overAppear");
+    resultTxt.innerHTML = eventItemTxt;
+  });
+  item.addEventListener("mouseleave", () => {
+    resultTxt.classList.remove("overAppear");
+  });
+});
 
 const goToTopBtn = document.querySelector("#goToTop");
 
@@ -163,6 +212,9 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// ★라이브러리★  =========================================
+
+//work section
 $(".btn li").click(function () {
   $(this).addClass("active");
   $(this).siblings().removeClass("active");
@@ -171,3 +223,13 @@ $(".btn li").click(function () {
   $(".tabs > div").removeClass("active");
   $("#" + result).addClass("active");
 });
+
+//wow
+let wow = new WOW({
+  boxClass: "wow", // default /값받고 싶은 애는 wow라는 클래스를 가지고 있을거야
+  // animateClass: 'animated', // default /css로 만든 애니메이션을 연결하고 싶으면 animated이라는 클래스를 줘라
+  offset: 150, // default / 몇픽셀 정도가 됐을때 wow라는 애니메이션을 실행시킬거냐
+  mobile: true, // default /모바일에서쓰고 싶으면 트루 아니면 폴스
+  live: true, // default / 지속적으로 반영하고 싶게 해줄거냐
+});
+wow.init();

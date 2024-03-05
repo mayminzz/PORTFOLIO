@@ -1,3 +1,40 @@
+//로그인
+const loginBtn = document.querySelector("#loginBtn");
+const inputId = document.querySelector("#id");
+const inputPw = document.querySelector("#password");
+
+loginBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  try {
+    if (inputId.value == "" || inputPw.value == "") {
+      throw new Error("아이디와 패스워드를 정확하게 입력하세요!");
+    } else {
+      alert(`${inputId.value}님 환영합니다🤗`);
+    }
+  } catch (error) {
+    alert(error.message);
+  }
+});
+
+
+//비회원 내역 조회하기
+const orderCheck = document.querySelector("#orderCheck");
+const name = document.querySelector("#name");
+const orderNumber = document.querySelector("#orderNumber");
+
+orderCheck.addEventListener("click", (e) => {
+  e.preventDefault();
+  try {
+    if (name.value == "" || orderNumber.value == "") {
+      throw new Error("주문자명과 주문번호를 정확하게 입력하세요!");
+    } else {
+      alert(`${name.value}님의 주문내역으로 이동합니다.`);
+    }
+  } catch (error) {
+    alert(error.message);
+  }
+});
+
 //자동 로그인
 const autoCheckbox = document.querySelector(".auto > label");
 const mark = document.querySelector(".auto > span");
@@ -47,4 +84,3 @@ delBtn.addEventListener("click", () => {
   signUpModal.classList.remove("showModal");
   loginWrapper.classList.remove("darkBg");
 });
-

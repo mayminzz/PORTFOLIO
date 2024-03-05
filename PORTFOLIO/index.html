@@ -14,6 +14,8 @@
       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
       crossorigin="anonymous"
     ></script>
+    <!-- wow.js -->
+    <script src="./wow.js"></script>
     <!-- fontawesome -->
     <script
       src="https://kit.fontawesome.com/bd0a8925a1.js"
@@ -33,6 +35,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#stack">Stack</a></li>
             <li><a href="#project">Project</a></li>
+            <li><a href="#work">work</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -44,15 +47,52 @@
       </header>
       <main>
         <section id="home">
-          <h1>minju'<b>s</b><br />PORTFOLIO</h1>
+          <div class="title">
+            <div class="title_img">
+              <img src="./img/me.png" alt="home_me" />
+            </div>
+            <div class="title_text">
+              <span>M</span>
+              <span>i</span>
+              <span>n</span>
+              <span>j</span>
+              <span>u</span>
+              <span>'</span>
+              <span class="small">s</span>
+              <!-- <br /> -->
+              <span>P</span>
+              <span>o</span>
+              <span>r</span>
+              <span>t</span>
+              <span>f</span>
+              <span>o</span>
+              <span>l</span>
+              <span>i</span>
+              <span>o</span>
+            </div>
+            <div class="subTitle">
+              <h1>
+                <span>열정적인</span>
+                웹 퍼블리셔 권민주
+              </h1>
+            </div>
+          </div>
+          <div class="scroll_down_icon">
+            <span class="scroll_down_icon_mouse">
+              <span class="scroll_down_icon_mouse_move"></span>
+            </span>
+            <div class="scroll_down_text">
+              <p>스크롤을 내리세요!</p>
+            </div>
+          </div>
         </section>
         <section id="about">
           <div class="about_inner">
             <div class="about_box">
-              <div class="photo">
+              <div class="photo ltr wow">
                 <img src="./img/me1.jpg" alt="myImg" />
               </div>
-              <div class="desc">
+              <div class="desc rtl wow">
                 <h1>
                   안녕하세요!<br />발전가능성이 무한한 <br />웹 퍼블리셔
                   <b>권민주</b>입니다🖐️
@@ -71,10 +111,10 @@
           </div>
         </section>
         <section id="stack">
-          <div class="title">
+          <div class="title ltr wow">
             <h1>Tech Stack</h1>
           </div>
-          <div class="skill_sec">
+          <div class="skill_sec rtl wow">
             <div class="skill_list">
               <h1>Design <span>디자인</span></h1>
               <ul>
@@ -113,7 +153,7 @@
               </ul>
             </div>
             <div class="skill_list">
-              <h1>System <span>시스템</span></h1>
+              <h1>DataBase <span>데이터베이스</span></h1>
               <ul>
                 <li>Firebase를 통한 호스팅이 가능합니다.</li>
                 <li>
@@ -140,7 +180,7 @@
         </section>
         <section id="project" class="container">
           <h1>Project</h1>
-          <div class="slideCountainer">
+          <div class="slideCountainer btt wow">
             <ul class="slider_projects">
               <li class="slide_project" data-idx="0">
                 <div class="project_photo">
@@ -171,6 +211,14 @@
                         점들을 개선하여 전반적인 사용자 만족도를 높이기에 중점을
                         두었습니다.
                       </p>
+                      <div class="figmaView">
+                        <button>
+                          <a
+                            href="https://www.figma.com/file/bNZyfITYiO8DDgNYHePr5j/Untitled?type=design&node-id=0%3A1&mode=dev&t=EXesJ7B7iziv97AE-1"
+                            >기술서 보기</a
+                          >
+                        </button>
+                      </div>
                     </div>
                     <div class="work_info">
                       <h3>Work Info.</h3>
@@ -218,6 +266,14 @@
                         아닌 텍스처 화면으로 단조로운 분위기에 생동감을
                         더했습니다.
                       </p>
+                      <div class="figmaView">
+                        <button>
+                          <a
+                            href="https://www.figma.com/file/Kgj6QQJX2R5yLpY7uN8W37/Untitled?type=design&node-id=0%3A1&mode=design&t=EXesJ7B7iziv97AE-1"
+                            >기술서 보기</a
+                          >
+                        </button>
+                      </div>
                     </div>
                     <div class="work_info">
                       <h3>Work Info.</h3>
@@ -255,124 +311,157 @@
               <li data-alt="tab6" data-name="React">React</li>
             </ul>
             <div class="tabs">
-              <div id="tab1" class="active">
+              <div id="tab1" class="active tab">
                 <div class="tab_content">
                   <a href="https://naver-clonecoding.web.app" target="_blank">
                     <img src="./img/naver.png" alt="naver" />
                     <h2>NAVER</h2>
                   </a>
+                  <p>
+                    <span>HTML, CSS</span>를 이용한 NAVER 클론코딩 작업물입니다.
+                  </p>
                 </div>
                 <div class="tab_content">
                   <a href="https://mcdonald-s-21c5f.web.app" target="_blank">
                     <img src="./img/mcdonald.png" alt="naver" />
                     <h2>맥도날드 (Main + Story)</h2>
                   </a>
+                  <p>
+                    <span>HTML, CSS, Javascript</span>를 이용한 맥도날드
+                    클론코딩 PC전용 작업물입니다.
+                  </p>
                 </div>
                 <div class="tab_content">
                   <a href="https://ably-b6f85.web.app" target="_blank">
                     <img src="./img/ably.png" alt="ably" />
                     <h2>에이블리</h2>
                   </a>
+                  <p>
+                    <span>HTML, CSS, Javascript</span>를 이용한 에이블리
+                    클론코딩 mobile전용 작업물입니다.
+                  </p>
                 </div>
                 <div class="tab_content">
                   <a href="https://shinhan-d8b9b.web.app/" target="_blank">
                     <img src="./img/shinhan_img.png" alt="shinhan" />
-                    <h2>신한은행</h2>
+                    <h2>신한카드</h2>
                   </a>
+                  <p>
+                    <span>HTML, CSS, Javascript</span>를 이용한 신한카드
+                    클론코딩 반응형 작업물입니다.
+                  </p>
                 </div>
                 <div class="tab_content">
                   <a href="https://etude-79933.web.app/" target="_blank">
                     <img src="./img/etude.png" alt="etude" />
                     <h2>에뛰드</h2>
                   </a>
+                  <p>
+                    <span>HTML, CSS, Javascript</span>를 이용한 에뛰드 클론코딩
+                    반응형 작업물입니다.
+                  </p>
                 </div>
                 <div class="tab_content">
                   <a href="https://pet-clone-7800f.web.app/" target="_blank">
                     <img src="./img/pet.png" alt="pet" />
                     <h2>강아지 대통령</h2>
                   </a>
-                </div>
-                <div class="tab_content">
-                  <a href="https://kakao-1.web.app" target="_blank">
-                    <img src="./img/kakao1.png" alt="kakao1" />
-                    <h2>KAKAO 채팅목록</h2>
-                  </a>
-                </div>
-                <div class="tab_content">
-                  <a href="https://kakao-2.web.app" target="_blank">
-                    <img src="./img/kakao2.png" alt="kakao2" />
-                    <h2>kakao 설정</h2>
-                  </a>
-                </div>
-                <div class="tab_content">
-                  <a href="https://kakao-3.web.app" target="_blank">
-                    <img src="./img/kakao3.png" alt="kakao3" />
-                    <h2>KAKAO 이모티콘</h2>
-                  </a>
+                  <p>
+                    <span>HTML, SCSS, Javascript</span>를 이용한 강아지대통령
+                    클론코딩 반응형 작업물입니다.
+                  </p>
                 </div>
               </div>
-              <div id="tab2">
+              <div id="tab2" class="tab">
                 <div class="tab_content">
                   <a href="https://musinsa-login.web.app" target="_blank">
                     <img src="./img/musinsa.jpeg" alt="musinsa" />
                     <h2>MUSINSA</h2>
                   </a>
+                  <p>
+                    <span>form태그</span>를 사용한 로그인 mobile전용 예제입니다.
+                  </p>
                 </div>
               </div>
-              <div id="tab3">
+              <div id="tab3" class="tab">
                 <div class="tab_content">
                   <a href="https://library-gnb.web.app" target="_blank">
                     <img src="./img/toggle.png" alt="toggle_img" />
                     <h2>toggle 예제</h2>
                   </a>
+                  <p><span>Javascript</span>를 사용한 toggle 예제입니다</p>
                 </div>
               </div>
-              <div id="tab4">
+              <div id="tab4" class="tab">
                 <div class="tab_content">
                   <a href="https://claude-monet-36639.web.app" target="_blank">
                     <img src="./img/slide.png" alt="slide" />
                     <h2>슬라이드 예제</h2>
                   </a>
+                  <p>바닐라 자바스크립트 <span>슬라이드</span> 예제입니다.</p>
                 </div>
               </div>
-              <div id="tab5">
+              <div id="tab5" class="tab">
                 <div class="tab_content">
                   <a href="https://d-day-9a024.web.app" target="_blank">
                     <img src="./img/D-day.png" alt="D-day" />
                     <h2>D-day</h2>
                   </a>
+                  <p>
+                    <span>Date()</span> 내장 객체를 사용한 바닐라 자바스크립트
+                    예제입니다. 이 예제는 <span>현재 날짜와 시간</span>을
+                    가져오고, 해당 정보를 HTML 요소에 표시하는 간단한 기능을
+                    구현합니다.
+                  </p>
                 </div>
                 <div class="tab_content">
                   <a href="https://heritage-1d559.web.app" target="_blank">
                     <img src="./img/heritage.png" alt="heritage" />
                     <h2>data 속성 (JQuery)</h2>
                   </a>
+                  <p>
+                    <span>data 속성</span>을 이용한 바닐라 자바스크립트
+                    예제입니다.
+                  </p>
                 </div>
               </div>
-              <div id="tab6">
+              <div id="tab6" class="tab">
                 <div class="tab_content">
                   <a href="https://netflix-be2b4.web.app" target="_blank">
                     <img src="./img/netflix.png" alt="musinsa" />
                     <h2>NETFLIX</h2>
                   </a>
+                  <p>
+                    <span>React</span>와 <span>Redux</span>를 활용하고 외부
+                    API를 통합한 예제로,
+                    <span>Redux를 사용하여 애플리케이션의 상태를 관리</span
+                    >하고, <span>외부 API</span>로부터 데이터를 사용하였습니다.
+                  </p>
                 </div>
                 <div class="tab_content">
                   <a href="https://musinsa-ee57f.web.app/" target="_blank">
                     <img src="./img/musinsa_react.png" alt="musinsa" />
                     <h2>MUSINSA</h2>
                   </a>
+                  <p><span>React</span>로 작업한 MUSINSA 페이지입니다.</p>
                 </div>
                 <div class="tab_content">
                   <a href="https://mbti-cat-db7f3.web.app" target="_blank">
                     <img src="./img/mbti-cat.png" alt="mbti 고양이" />
                     <h2>MBTI에 따른 고양이 추천</h2>
                   </a>
+                  <p>성향에 맞는 고양이 추천해주는 예제입니다.</p>
                 </div>
                 <div class="tab_content">
                   <a href="https://todolist-9345c.web.app" target="_blank">
                     <img src="./img/todolist.png" alt="todolist" />
                     <h2>To Do List</h2>
                   </a>
+                  <p>
+                    <span>React</span>로 작성된 간단한 예제입니다. 이 예제는
+                    간단한 To-Do 리스트를 만들어 사용자가 할
+                    <span>일을 추가하고 삭제할 수 있습니다.</span>
+                  </p>
                 </div>
                 <div class="tab_content">
                   <a href="https://todo-s-fcc04.web.app" target="todo's">
@@ -382,10 +471,13 @@
                 </div>
               </div>
             </div>
+            <div class="work_desc">
+              <p></p>
+            </div>
           </div>
         </section>
         <section id="contact">
-          <div class="contact_main">
+          <div class="contact_main scale wow">
             <span>기억에 남을 수 있는, 기대할 수 있는 인재 😁</span>
             <h1><a href="mailto:mayminzz@naver.com">mayminzz@naver.com</a></h1>
             <p>매일을 보내주시면 확인 후 최대한 빠르게 회신드리겠습니다.</p>
@@ -424,9 +516,14 @@
             <p>p</p>
             <div class="modal_badge"></div>
           </div>
-          <button class="aLink">
-            <a href="" target="_blank">사이트 바로가기</a>
-          </button>
+          <div class="buttons">
+            <button class="aLink">
+              <a href="" target="_blank">사이트 바로가기</a>
+            </button>
+            <button class="figmaView">
+              <a href="" target="_blank">기술서 보기</a>
+            </button>
+          </div>
           <div class="detail_img">
             <img src="" alt="" />
           </div>
@@ -445,7 +542,9 @@
               <h3>Work Info.</h3>
             </div>
           </div>
-          <button class="close">닫기</button>
+          <div class="closeBtn">
+            <button class="close">닫기</button>
+          </div>
         </div>
       </aside>
     </div>
