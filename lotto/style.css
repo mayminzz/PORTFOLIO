@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #222;
+  color: #fff;
+}
+button {
+  width: 200px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+button:hover {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+h1 {
+  font-size: 30px;
+}
+#result {
+  width: 100%;
+  max-width: 768px;
+  margin: 20px;
+  margin-top: 100px;
+  padding: 20px;
+  text-align: center;
+}
+#result h5 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+#result p {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.5rem;
+  color: red;
+}
+
+#result p span {
+  width: 50px;
+  height: 50px;
+  line-height: 55px;
+  text-align: center;
+  list-style: none;
+  /* background:  rgb(209, 16, 16); */
+  border-radius: 50%;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+#bonus {
+  text-align: center;
+}
+#bonus h6 {
+  font-size: 2.2rem;
+  color: yellow;
+  margin-bottom: 10px;
+}
+#bonus span {
+  display: none;
+  width: 50px;
+  height: 50px;
+  line-height: 55px;
+  text-align: center;
+  border-radius: 50%;
+  background: yellow;
+  color: #000;
+  font-size: 1.8rem;
+}
+#bonus span.visible {
+  display: inline-block;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  #result h5 {
+    font-size: 1.8rem;
+  }
+  #result p {
+    gap: 10px;
+  }
+  #result p span {
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+  }
+  #bonus h6 {
+    font-size: 1.8rem;
+  }
+  #bonus span {
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+  }
+}
