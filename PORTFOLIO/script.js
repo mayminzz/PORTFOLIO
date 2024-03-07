@@ -29,6 +29,19 @@ const toggleBtn = document.querySelector(".toggle_button");
 const container = document.querySelector("#container");
 const modeTxt = document.querySelector(".bright_version > span");
 const body = document.querySelector("body");
+const arrows = document.querySelectorAll("#project > a img");
+
+const arrowChange = () => {
+  arrows.forEach((arrow) => {
+    const dataImg = arrow.dataset.img;
+    const dataImg2 = arrow.dataset.img2;
+    if (modeTxt.innerText === "Dark Mode") {
+      arrow.setAttribute("src", dataImg);
+    } else {
+      arrow.setAttribute("src", dataImg2);
+    }
+  });
+};
 
 toggleBtn.addEventListener("click", () => {
   toggleBtn.classList.toggle("active");
@@ -39,6 +52,7 @@ toggleBtn.addEventListener("click", () => {
   } else {
     modeTxt.innerText = "Light Mode";
   }
+  arrowChange();
 });
 
 //home

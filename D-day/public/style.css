@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Hi Melody;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container img {
+  width: 360px;
+  z-index: 999;
+}
+.mobile-display {
+  width: 303px;
+  height: 660px;
+  position: absolute;
+  border-radius: 12%;
+}
+.banner {
+  background: url(./img/couple-img.jpeg) top center/cover no-repeat;
+  width: 310px;
+  height: 310px;
+  position: fixed;
+  border-radius: 12% 12% 0 0;
+}
+.banner-txt {
+  width: 100%;
+  height: 100%;
+  padding-top: 30px;
+  padding: 0 20px;
+  border-radius: 12% 12% 0 0;
+  position: relative;
+  border: 1px solid #000;
+}
+.banner-txt::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 12% 12% 0 0;
+}
+.banner-txt .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  color: #fff;
+  position: relative;
+}
+.banner-txt .icon i:first-child {
+  margin-right: 15px;
+}
+.banner-txt .txt {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  position: relative;
+}
+.banner-txt .txt > i {
+  font-size: 30px;
+  color: rgb(250, 48, 48);
+}
+.banner-txt span {
+  color: #fff;
+  
+}
+
+.day1 {
+  text-align: right;
+  position: absolute;
+  right: 20px;
+  bottom: 30px;
+}
+.day1 h3 {
+  font-size: 1.2em;
+  color: #ffffff;
+}
+.accent {
+  margin: 10px 0;
+}
+.accent span {
+  font-size: 1.4em;
+  color: #fff;
+  font-style: italic;
+}
+.days {
+  width: 100%;
+  height: 57%;
+  background: #efefef;
+  border-radius:10% 10% 12% 12%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.day2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px 10px;
+}
+.day2 ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #9b9b9b;
+  padding: 10px 0;
+}
+.day2 ul:first-child {
+  border-top: none;
+}
+.item-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #222;
+}
+.item-date {
+  font-size: 1em;
+  font-weight: bold;
+  color: #5a5a5a;
+}

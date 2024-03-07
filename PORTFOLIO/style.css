@@ -48,41 +48,42 @@ header {
 }
 header .bright_version {
   position: absolute;
-  left: 10px;
+  left: 20px;
   margin-top: 10px;
   text-align: center;
 }
 header .bright_version .button_wrap {
-  width: 50px;
-  height: 25px;
+  width: 40px;
+  height: 14px;
   line-height: 30px;
   border-radius: 20px;
-  border: 1px solid #fff;
+  background: #ddd;
   display: flex;
   align-items: center;
   position: relative;
 }
 header .bright_version .button_wrap .toggle_button {
-  width: 17px;
-  height: 17px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #c84b31;
   transition: all 0.3s;
   position: absolute;
-  left: 3px;
+  left: 0px;
 }
 header .bright_version .button_wrap .toggle_button:hover {
-  box-shadow: 0px 0px 5px #b1b1b1;
+  box-shadow: 0px 0px 10px rgba(236, 87, 23, 0.7);
 }
 header .bright_version .button_wrap .toggle_button.active {
   position: absolute;
   left: 60%;
-  background: #26d2d3;
+  background: #c84b31;
+  box-shadow: 0px 0px 10px rgba(236, 87, 23, 0.7);
 }
 header .bright_version span {
   display: block;
   font-size: 10px;
-  margin-top: 1px;
+  margin-top: 5px;
   color: #fff;
 }
 header .logo {
@@ -130,7 +131,6 @@ header.bgChange {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   padding: 120px;
   background: #1d1d1d;
   color: #fff;
@@ -281,7 +281,8 @@ header.bgChange {
 }
 #about {
   width: 100%;
-  padding: 150px;
+  height: 100vh;
+  padding: 160px 150px;
 }
 #about .about_box {
   display: flex;
@@ -293,10 +294,8 @@ header.bgChange {
   color: #fff;
 }
 #about .about_box .photo {
+  flex: 2;
   text-align: left;
-  width: 400px;
-  height: 500px;
-  background: #eee;
   border-radius: 20px;
   animation: ltr 1s linear both;
 }
@@ -310,7 +309,7 @@ header.bgChange {
   border-radius: 20px;
 }
 #about .about_box .desc {
-  flex: 1;
+  flex: 5;
   animation: rtl 1s linear both;
 }
 #about .about_box .desc > h1 {
@@ -414,6 +413,7 @@ header.bgChange {
 
 #project {
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -440,7 +440,7 @@ header.bgChange {
 }
 #project .slideCountainer {
   width: 100%;
-  height: 53vh;
+  height: 60vh;
   min-height: 470px;
   position: relative;
   overflow: hidden;
@@ -455,7 +455,7 @@ header.bgChange {
   justify-content: flex-start;
   align-items: flex-start;
   position: absolute;
-  top: 10%;
+  top: 12%;
   left: 0;
 }
 #project .slideCountainer .slider_projects .slide_project {
@@ -471,7 +471,7 @@ header.bgChange {
   text-align: right;
 }
 #project .slideCountainer .slider_projects .slide_project .project_photo img {
-  width: 600px;
+  width: 100%;
   border-radius: 10px;
 }
 #project .slideCountainer .slider_projects .slide_project .project_desc {
@@ -480,7 +480,7 @@ header.bgChange {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 120px;
+  gap: 110px;
 }
 #project .slideCountainer .slider_projects .slide_project .project_desc .project_title h3 {
   font-size: 40px;
@@ -715,7 +715,7 @@ aside .aside_inner .closeBtn .close:hover {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 80px 150px;
+  padding: 100px 150px;
 }
 #work .tab_inner {
   width: 100%;
@@ -745,7 +745,7 @@ aside .aside_inner .closeBtn .close:hover {
 }
 #work .tab_inner .tabs {
   width: 100%;
-  height: 640px;
+  height: 80vh;
   border-radius: 10px;
   padding: 20px;
   border: 1px solid #999999;
@@ -767,7 +767,7 @@ aside .aside_inner .closeBtn .close:hover {
 }
 #work .tab_inner .tabs > div > .tab_content a {
   width: 100%;
-  height: 170px;
+  height: 200px;
   display: inline-block;
   margin-bottom: 20px;
 }
@@ -1072,7 +1072,7 @@ aside .aside_inner .closeBtn .close:hover {
     padding: 30px 0;
   }
   #project .slideCountainer .slider_projects .slide_project .project_photo {
-    flex: 1;
+    flex: 1.1;
     padding-left: 0;
   }
   #project .slideCountainer .slider_projects .slide_project .project_photo img {
@@ -1375,7 +1375,7 @@ aside .aside_inner .closeBtn .close:hover {
     top: 25%;
   }
   #work {
-    padding: 0px 20px;
+    padding: 100px 20px;
   }
   #work .tab_inner {
     width: 100%;
@@ -1387,14 +1387,15 @@ aside .aside_inner .closeBtn .close:hover {
   }
   #work .tab_inner .btn li {
     color: #fff;
-    padding: 7px 15px;
+    padding: 7px 25px;
     font-weight: 800;
-    font-size: 18px;
+    font-size: 24px;
     cursor: pointer;
     position: relative;
   }
   #work .tab_inner .tabs {
     width: 100%;
+    height: 80vh;
     padding: 20px;
   }
   #work .tab_inner .tabs > div {
@@ -1405,7 +1406,7 @@ aside .aside_inner .closeBtn .close:hover {
   }
   #work .tab_inner .tabs > div > .tab_content a {
     width: 100%;
-    height: 120px;
+    height: 140px;
     display: inline-block;
     margin-bottom: 20px;
   }
@@ -1419,7 +1420,7 @@ aside .aside_inner .closeBtn .close:hover {
        object-position: center;
   }
   #work .tab_inner .tabs > div > .tab_content a h2 {
-    font-size: 17px;
+    font-size: 20px;
     text-align: center;
     color: #fff;
     margin-bottom: 10px;
@@ -1556,6 +1557,7 @@ aside .aside_inner .closeBtn .close:hover {
   }
   #about {
     padding: 20px;
+    padding-top: 80px;
     background: #222;
   }
   #about .about_inner .about_box {
@@ -1566,12 +1568,13 @@ aside .aside_inner .closeBtn .close:hover {
     padding: 0;
   }
   #about .about_inner .about_box .photo {
-    width: 70%;
-    height: 400px;
+    width: 65%;
   }
   #about .about_inner .about_box .photo img {
-    width: 100%;
-    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
   }
   #about .about_inner .about_box .desc > h1 {
     font-size: 24px;
@@ -1582,7 +1585,7 @@ aside .aside_inner .closeBtn .close:hover {
   #stack {
     width: 100%;
     padding: 25px;
-    padding-top: 40px;
+    padding-top: 90px;
     flex-direction: column;
     justify-content: flex-start;
   }
@@ -1626,7 +1629,7 @@ aside .aside_inner .closeBtn .close:hover {
     width: 100%;
     height: 100vh;
     padding: 20px;
-    padding-top: 70px;
+    padding-top: 120px;
   }
   #project h1 {
     font-size: 32px;
@@ -1709,7 +1712,7 @@ aside .aside_inner .closeBtn .close:hover {
     font-size: 15px;
   }
   #work {
-    padding: 0px 20px;
+    padding: 90px 20px;
   }
   #work .tab_inner {
     width: 100%;
@@ -1723,11 +1726,12 @@ aside .aside_inner .closeBtn .close:hover {
     padding: 0 5px;
   }
   #work .tab_inner .btn li {
-    padding: 0;
+    width: 25%;
+    text-align: center;
     color: #fff;
     padding: 5px 0px;
     font-weight: 800;
-    font-size: 13px;
+    font-size: 18px;
     cursor: pointer;
     position: relative;
   }
@@ -1735,7 +1739,7 @@ aside .aside_inner .closeBtn .close:hover {
     width: 100%;
     padding: 5px;
     padding-top: 10px;
-    height: 600px;
+    height: 80vh;
   }
   #work .tab_inner .tabs > div {
     display: none;
@@ -1745,7 +1749,7 @@ aside .aside_inner .closeBtn .close:hover {
   }
   #work .tab_inner .tabs > div > .tab_content a {
     width: 100%;
-    height: 85px;
+    height: 100px;
     display: inline-block;
     margin-bottom: 18px;
   }
@@ -1759,17 +1763,19 @@ aside .aside_inner .closeBtn .close:hover {
        object-position: center;
   }
   #work .tab_inner .tabs > div > .tab_content a h2 {
-    font-size: 13px;
+    font-size: 17px;
     text-align: center;
     color: #fff;
     margin-bottom: 10px;
   }
   #work .tab_inner .work_desc {
+    width: 100%;
     text-align: center;
     position: absolute;
-    bottom: 50px;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
+    padding: 0 10px;
   }
   #work .tab_inner .work_desc p {
     display: none;
@@ -1856,7 +1862,7 @@ body.bright {
   background: #eee;
 }
 .bright header .button_wrap {
-  border: 1px solid #202020;
+  background: rgba(236, 87, 23, 0.6);
 }
 .bright header .logo .logo_img {
   background: url(./img/logo_dark.png) center center/cover no-repeat;

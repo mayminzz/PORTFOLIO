@@ -32,8 +32,7 @@
           <span>Light Mode</span>
         </div>
         <div class="logo">
-          <a class="logo_img" href="#home">
-          </a>
+          <a class="logo_img" href="#home"> </a>
         </div>
         <nav>
           <ul class="gnb">
@@ -162,8 +161,8 @@
               <ul>
                 <li>Firebase를 통한 호스팅이 가능합니다.</li>
                 <li>
-                  Github사용이 가능하며, 모든 작업물을
-                  업로드하여 버전을 관리하였습니다.
+                  Github사용이 가능하며, 모든 작업물을 업로드하여 버전을
+                  관리하였습니다.
                 </li>
                 <li>
                   <img src="./img/firebase.png" alt="firebase" />
@@ -229,14 +228,20 @@
                     </div>
                     <div class="work_info">
                       <h3>Work Info.</h3>
-                      <p><span>제작 기간</span><span>2023.10.01 ~ 2023.10.23</span></p>
                       <p>
-                        <span>제작 영역</span><span>기획, 디자인, 퍼블리싱 100% 혼자
-                          작업한 작업물입니다.</span>
+                        <span>제작 기간</span
+                        ><span>2023.10.01 ~ 2023.10.23</span>
                       </p>
                       <p>
-                        <span>사용 툴</span><span>HTML, CSS, Javascript, Photoshop,
-                          Fingma</span>
+                        <span>제작 영역</span
+                        ><span
+                          >기획, 디자인, 퍼블리싱 100% 혼자 작업한
+                          작업물입니다.</span
+                        >
+                      </p>
+                      <p>
+                        <span>사용 툴</span
+                        ><span>HTML, CSS, Javascript, Photoshop, Fingma</span>
                       </p>
                     </div>
                   </div>
@@ -282,39 +287,49 @@
                     </div>
                     <div class="work_info">
                       <h3>Work Info.</h3>
-                      <p><span>제작 기간</span><span>2023.10.23 ~ 2023.11.22</span></p>
                       <p>
-                        <span>제작 영역</span><span>PM으로서 조원 관리, 기획, 디자인,
-                          퍼블리싱</span>
+                        <span>제작 기간</span
+                        ><span>2023.10.23 ~ 2023.11.22</span>
                       </p>
                       <p>
-                        <span>사용 툴</span><span>HTML, SCSS, Javascript, Photoshop,
-                          Fingma</span>
+                        <span>제작 영역</span
+                        ><span>PM으로서 조원 관리, 기획, 디자인, 퍼블리싱</span>
+                      </p>
+                      <p>
+                        <span>사용 툴</span
+                        ><span>HTML, SCSS, Javascript, Photoshop, Fingma</span>
                       </p>
                     </div>
                   </div>
                 </div>
               </li>
-           
             </ul>
             <p class="pager"></p>
           </div>
           <a id="prev" href="#">
-            <img src="./img/arrow_left.png" alt="prevBtn" />
+            <img
+              src="./img/arrow_left.png"
+              data-img="./img/left_arrow_black.png"
+              data-img2="./img/arrow_left.png"
+              alt="prevBtn"
+            />
           </a>
           <a id="next" href="#">
-            <img src="./img/arrow_right.png" alt="nextBtn" />
+            <img
+              src="./img/arrow_right.png"
+              data-img="./img/right_arrow_black.png"
+              data-img2="./img/arrow_right.png"
+              alt="nextBtn"
+            />
           </a>
         </section>
         <section id="work">
           <div class="tab_inner">
             <ul class="btn">
               <li data-alt="tab1" class="active" data-name="Clone">Clone</li>
-              <li data-alt="tab2" data-name="Login">Login</li>
-              <li data-alt="tab3" data-name="Toggle">Toggle</li>
-              <li data-alt="tab4" data-name="Slide">Slide</li>
-              <li data-alt="tab5" data-name="Javascript">Javascript</li>
-              <li data-alt="tab6" data-name="React">React</li>
+              <li data-alt="tab2" data-name="Slide">JS</li>
+              <li data-alt="tab3" data-name="Javascript">jQuery</li>
+              <li data-alt="tab4" data-name="React">React</li>
             </ul>
             <div class="tabs">
               <div id="tab1" class="active tab">
@@ -340,7 +355,7 @@
                 <div class="tab_content">
                   <a href="https://ably-b6f85.web.app" target="_blank">
                     <img src="./img/ably.png" alt="ably" />
-                    <h2>에이블리</h2>
+                    <h2>에이블리 [웹앱]</h2>
                   </a>
                   <p>
                     <span>HTML, CSS, Javascript</span>를 이용한 에이블리
@@ -380,6 +395,16 @@
               </div>
               <div id="tab2" class="tab">
                 <div class="tab_content">
+                  <a href="https://lotto-1c57a.web.app" target="_blank">
+                    <img src="./img/lotto.png" alt="heritage" />
+                    <h2>로또 추첨기</h2>
+                  </a>
+                  <p>
+                    <span>Math.random()</span> 함수를 사용하여 임의의 숫자를
+                    생성하여 로또 번호를 추첨합니다.
+                  </p>
+                </div>
+                <div class="tab_content">
                   <a href="https://musinsa-login.web.app" target="_blank">
                     <img src="./img/musinsa.jpeg" alt="musinsa" />
                     <h2>MUSINSA</h2>
@@ -388,17 +413,6 @@
                     <span>form태그</span>를 사용한 로그인 mobile전용 예제입니다.
                   </p>
                 </div>
-              </div>
-              <div id="tab3" class="tab">
-                <div class="tab_content">
-                  <a href="https://library-gnb.web.app" target="_blank">
-                    <img src="./img/toggle.png" alt="toggle_img" />
-                    <h2>toggle 예제</h2>
-                  </a>
-                  <p><span>Javascript</span>를 사용한 toggle 예제입니다</p>
-                </div>
-              </div>
-              <div id="tab4" class="tab">
                 <div class="tab_content">
                   <a href="https://claude-monet-36639.web.app" target="_blank">
                     <img src="./img/slide.png" alt="slide" />
@@ -406,8 +420,13 @@
                   </a>
                   <p>바닐라 자바스크립트 <span>슬라이드</span> 예제입니다.</p>
                 </div>
-              </div>
-              <div id="tab5" class="tab">
+                <div class="tab_content">
+                  <a href="https://library-gnb.web.app" target="_blank">
+                    <img src="./img/toggle.png" alt="toggle_img" />
+                    <h2>toggle 예제</h2>
+                  </a>
+                  <p><span>Javascript</span>를 사용한 toggle 예제입니다</p>
+                </div>
                 <div class="tab_content">
                   <a href="https://d-day-9a024.web.app" target="_blank">
                     <img src="./img/D-day.png" alt="D-day" />
@@ -421,6 +440,18 @@
                   </p>
                 </div>
                 <div class="tab_content">
+                  <a href="https://gallery-cc868.web.app/" target="_blank">
+                    <img src="./img/isotope.png" alt="isotope" />
+                    <h2>gallery</h2>
+                  </a>
+                  <p>
+                    그리드 레이아웃을 쉽게 구현할 수 있도록 도와주는 JavaScript 라이브러리 <span>Isotope</span>를 사용하여
+                    요소들을 동적으로 정렬하고 필터링할 수 있게 하였습니다. 
+                  </p>
+                </div>
+              </div>
+              <div id="tab3" class="tab">
+                <div class="tab_content">
                   <a href="https://heritage-1d559.web.app" target="_blank">
                     <img src="./img/heritage.png" alt="heritage" />
                     <h2>data 속성 (JQuery)</h2>
@@ -430,17 +461,8 @@
                     예제입니다.
                   </p>
                 </div>
-                <div class="tab_content">
-                  <a href="https://lotto-1c57a.web.app" target="_blank">
-                    <img src="./img/lotto.png" alt="heritage" />
-                    <h2>로또 추첨기</h2>
-                  </a>
-                  <p>
-                    <span>Math.random()</span> 함수를 사용하여 임의의 숫자를 생성하여 로또 번호를 추첨합니다.
-                  </p>
-                </div>
               </div>
-              <div id="tab6" class="tab">
+              <div id="tab4" class="tab">
                 <div class="tab_content">
                   <a href="https://netflix-be2b4.web.app" target="_blank">
                     <img src="./img/netflix.png" alt="musinsa" />
