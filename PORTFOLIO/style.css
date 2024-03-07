@@ -25,6 +25,7 @@ body {
 #container {
   width: 100%;
   font-family: inter;
+  overflow: hidden;
 }
 
 main.invisible {
@@ -45,17 +46,54 @@ header {
   z-index: 99;
   transition: 0.3s;
 }
+header .bright_version {
+  position: absolute;
+  left: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+header .bright_version .button_wrap {
+  width: 50px;
+  height: 25px;
+  line-height: 30px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+header .bright_version .button_wrap .toggle_button {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #c84b31;
+  transition: all 0.3s;
+  position: absolute;
+  left: 3px;
+}
+header .bright_version .button_wrap .toggle_button:hover {
+  box-shadow: 0px 0px 5px #b1b1b1;
+}
+header .bright_version .button_wrap .toggle_button.active {
+  position: absolute;
+  left: 60%;
+  background: #26d2d3;
+}
+header .bright_version span {
+  display: block;
+  font-size: 10px;
+  margin-top: 1px;
+  color: #fff;
+}
 header .logo {
   width: 60px;
   height: 37px;
 }
-header .logo img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+header .logo .logo_img {
+  display: inline-block;
+  width: 60px;
+  height: 37px;
+  background: url(./img/logo.png) center center/cover no-repeat;
 }
 header nav .gnb {
   display: flex;
@@ -142,7 +180,6 @@ header.bgChange {
 }
 #home .title .subTitle h1 {
   font-size: 24px;
-  position: relative;
   font-family: pretendard;
 }
 #home .title .subTitle h1 span {
@@ -474,6 +511,10 @@ header.bgChange {
   color: #26d2d3;
   border-radius: 30px;
   padding: 16px 50px;
+  transition: 0.3s;
+}
+#project .slideCountainer .slider_projects .slide_project .project_desc button:hover {
+  background: #1d3332;
 }
 #project .slideCountainer .slider_projects .slide_project .project_desc a {
   display: none;
@@ -554,39 +595,39 @@ aside {
 aside .aside_inner {
   width: 800px;
 }
-aside .top_sec {
+aside .aside_inner .top_sec {
   margin-bottom: 30px;
 }
-aside .top_sec h3 {
+aside .aside_inner .top_sec h3 {
   font-size: 40px;
   margin-bottom: 14px;
   color: #ddd;
 }
-aside .top_sec p {
+aside .aside_inner .top_sec p {
   font-size: 20px;
   color: #ddd;
   margin-bottom: 30px;
 }
-aside .top_sec .modal_badge {
+aside .aside_inner .top_sec .modal_badge {
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
-aside .top_sec .modal_badge > span {
+aside .aside_inner .top_sec .modal_badge > span {
   border: 2px solid #274d4c;
   border-radius: 20px;
   padding: 5px 10px;
   font-size: 14px;
   color: #26d2d3;
 }
-aside .buttons {
+aside .aside_inner .buttons {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
-aside .buttons > button {
+aside .aside_inner .buttons > button {
   display: block;
   width: 28%;
   font-size: 18px;
@@ -595,15 +636,19 @@ aside .buttons > button {
   border-radius: 30px;
   padding: 16px 50px;
   margin-bottom: 40px;
+  transition: 0.3s;
 }
-aside .buttons > button a {
+aside .aside_inner .buttons > button:hover {
+  background: #1d3332;
+}
+aside .aside_inner .buttons > button a {
   color: #26d2d3;
 }
-aside .detail_img {
+aside .aside_inner .detail_img {
   width: 100%;
   margin-bottom: 50px;
 }
-aside .detail_img img {
+aside .aside_inner .detail_img img {
   width: 100%;
   border-radius: 10px;
   -o-object-fit: cover;
@@ -611,38 +656,46 @@ aside .detail_img img {
   -o-object-position: center;
      object-position: center;
 }
-aside .info_sec .overview {
+aside .aside_inner .info_sec .overview {
   margin-bottom: 50px;
 }
-aside .info_sec .overview h3 {
+aside .aside_inner .info_sec .overview h3 {
   font-size: 28px;
   color: #ddd;
   margin-bottom: 10px;
 }
-aside .info_sec .overview p {
+aside .aside_inner .info_sec .overview p {
   font-size: 16px;
   color: #ccc;
   line-height: 1.5;
 }
-aside .info_sec .work_info h3 {
+aside .aside_inner .info_sec .work_info h3 {
   margin-bottom: 10px;
   font-size: 28px;
   color: #ddd;
 }
-aside .info_sec .work_info p {
+aside .aside_inner .info_sec .work_info p {
   font-size: 16px;
   color: #ccc;
-  line-height: 3;
+  display: flex;
+  flex-direction: row;
+  line-height: 2.5rem;
 }
-aside .info_sec .work_info p span {
-  color: #26d2d3;
+aside .aside_inner .info_sec .work_info p > span {
   margin-right: 30px;
 }
-aside .closeBtn {
+aside .aside_inner .info_sec .work_info p > span:nth-child(1) {
+  color: #26d2d3;
+  flex: 2.5;
+}
+aside .aside_inner .info_sec .work_info p > span:nth-child(2) {
+  flex: 7.5;
+}
+aside .aside_inner .closeBtn {
   text-align: center;
 }
-aside .closeBtn .close {
-  width: 30%;
+aside .aside_inner .closeBtn .close {
+  width: 50%;
   font-size: 18px;
   border: none;
   background: #274d4c;
@@ -650,6 +703,10 @@ aside .closeBtn .close {
   border-radius: 30px;
   padding: 16px 30px;
   margin-top: 50px;
+  transition: 0.3s;
+}
+aside .aside_inner .closeBtn .close:hover {
+  background: #1d3332;
 }
 
 #work {
@@ -706,15 +763,15 @@ aside .closeBtn .close {
   flex-wrap: wrap;
 }
 #work .tab_inner .tabs > div > .tab_content {
-  width: 300px;
+  width: 31%;
 }
 #work .tab_inner .tabs > div > .tab_content a {
   width: 100%;
-  height: 150px;
+  height: 170px;
   display: inline-block;
   margin-bottom: 20px;
 }
-#work .tab_inner .tabs > div > .tab_content img {
+#work .tab_inner .tabs > div > .tab_content a img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -725,17 +782,17 @@ aside .closeBtn .close {
   margin-bottom: 5px;
   transition: 0.3s;
 }
-#work .tab_inner .tabs > div > .tab_content img:hover {
+#work .tab_inner .tabs > div > .tab_content a img:hover {
   transform: scale(1.1);
 }
-#work .tab_inner .tabs > div > .tab_content h2 {
+#work .tab_inner .tabs > div > .tab_content a h2 {
   text-align: center;
   font-size: 20px;
   color: #fff;
   margin-bottom: 10px;
   cursor: pointer;
 }
-#work .tab_inner .tabs > div p {
+#work .tab_inner .tabs > div > .tab_content p {
   display: none;
   color: #fff;
   font-size: 20px;
@@ -901,6 +958,11 @@ aside .closeBtn .close {
   }
   header nav ul.gnb.show {
     display: flex;
+  }
+  header .bright_version {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
   div.toggle {
     display: block;
@@ -1076,11 +1138,11 @@ aside .closeBtn .close {
     flex-wrap: wrap;
   }
   #work .tab_inner .tabs > div > .tab_content {
-    width: 240px;
+    width: 30%;
   }
   #work .tab_inner .tabs > div > .tab_content a {
     width: 100%;
-    height: 200px;
+    height: 150px;
     display: inline-block;
     margin-bottom: 20px;
   }
@@ -1135,6 +1197,11 @@ aside .closeBtn .close {
   }
   header nav ul.gnb.show {
     display: flex;
+  }
+  header .bright_version {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
   div.toggle {
     display: block;
@@ -1322,7 +1389,7 @@ aside .closeBtn .close {
     color: #fff;
     padding: 7px 15px;
     font-weight: 800;
-    font-size: 17px;
+    font-size: 18px;
     cursor: pointer;
     position: relative;
   }
@@ -1334,7 +1401,7 @@ aside .closeBtn .close {
     display: none;
   }
   #work .tab_inner .tabs > div > .tab_content {
-    width: 180px;
+    width: 30%;
   }
   #work .tab_inner .tabs > div > .tab_content a {
     width: 100%;
@@ -1342,7 +1409,7 @@ aside .closeBtn .close {
     display: inline-block;
     margin-bottom: 20px;
   }
-  #work .tab_inner .tabs > div > .tab_content img {
+  #work .tab_inner .tabs > div > .tab_content a img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -1351,8 +1418,8 @@ aside .closeBtn .close {
     -o-object-position: center;
        object-position: center;
   }
-  #work .tab_inner .tabs > div > .tab_content h2 {
-    font-size: 14px;
+  #work .tab_inner .tabs > div > .tab_content a h2 {
+    font-size: 17px;
     text-align: center;
     color: #fff;
     margin-bottom: 10px;
@@ -1395,7 +1462,7 @@ aside .closeBtn .close {
   }
   header nav ul.gnb > li a {
     color: #fff;
-    font-size: 40px;
+    font-size: 30px;
     transition: 0.3s;
   }
   header nav ul.gnb > li a.active {
@@ -1403,6 +1470,11 @@ aside .closeBtn .close {
   }
   header nav ul.gnb.show {
     display: flex;
+  }
+  header .bright_version {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
   div.toggle {
     display: block;
@@ -1441,19 +1513,41 @@ aside .closeBtn .close {
     padding: 30px;
   }
   #home .title {
+    text-align: center;
     padding: 0;
+    margin-top: -100px;
   }
   #home .title .title_img {
     left: 0;
+    bottom: -130px;
   }
   #home .title .title_img img {
     width: 160px;
   }
+  #home .title .title_text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #home .title .title_text::before {
+    width: 100%;
+  }
   #home .title .title_text > span {
-    font-size: 35px;
+    font-size: 26px;
+    margin-bottom: 5px;
   }
   #home .title .title_text > span.small {
-    font-size: 32px;
+    font-size: 20px;
+    margin-top: 5px;
+  }
+  #home .title .subTitle {
+    margin-top: 28px;
+    text-align: right;
+    word-break: keep-all;
+  }
+  #home .title .subTitle h1 {
+    font-size: 20px;
+    line-height: 2rem;
   }
   #home .scroll_down_icon .scroll_down_icon_mouse {
     height: 40px;
@@ -1601,11 +1695,18 @@ aside .closeBtn .close {
   aside .aside_inner .top_sec .modal_badge {
     flex-wrap: wrap;
   }
-  aside .aside_inner .aLink {
-    width: 63%;
+  aside .buttons {
+    justify-content: space-between;
+    gap: 0;
   }
-  aside button {
+  aside .buttons button.aLink,
+  aside .buttons button.figmaView {
     width: 50%;
+    padding: 10px;
+  }
+  aside .buttons button.aLink a,
+  aside .buttons button.figmaView a {
+    font-size: 15px;
   }
   #work {
     padding: 0px 20px;
@@ -1634,21 +1735,21 @@ aside .closeBtn .close {
     width: 100%;
     padding: 5px;
     padding-top: 10px;
-    height: 740px;
+    height: 600px;
   }
   #work .tab_inner .tabs > div {
     display: none;
   }
   #work .tab_inner .tabs > div > .tab_content {
-    width: 145px;
+    width: 43%;
   }
   #work .tab_inner .tabs > div > .tab_content a {
     width: 100%;
-    height: 95px;
+    height: 85px;
     display: inline-block;
     margin-bottom: 18px;
   }
-  #work .tab_inner .tabs > div > .tab_content img {
+  #work .tab_inner .tabs > div > .tab_content a img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -1657,16 +1758,11 @@ aside .closeBtn .close {
     -o-object-position: center;
        object-position: center;
   }
-  #work .tab_inner .tabs > div > .tab_content h2 {
-    font-size: 14px;
+  #work .tab_inner .tabs > div > .tab_content a h2 {
+    font-size: 13px;
     text-align: center;
     color: #fff;
     margin-bottom: 10px;
-  }
-  #work .tab_inner .tabs > div > .tab_content p {
-    color: #fff;
-    font-size: 17px;
-    font-weight: 300;
   }
   #work .tab_inner .work_desc {
     text-align: center;
@@ -1679,9 +1775,9 @@ aside .closeBtn .close {
     display: none;
     color: #fff;
     font-family: pretendard;
-    font-size: 17px;
+    font-size: 15px;
     transition: all 0.3s;
-    line-height: 2rem;
+    line-height: 1.4rem;
     word-break: keep-all;
   }
   #work .tab_inner .work_desc p span {
@@ -1745,5 +1841,188 @@ aside .closeBtn .close {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+body.bright {
+  background: #fff;
+}
+
+.bright header {
+  z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid #000;
+}
+.bright header.bgChange {
+  background: #eee;
+}
+.bright header .button_wrap {
+  border: 1px solid #202020;
+}
+.bright header .logo .logo_img {
+  background: url(./img/logo_dark.png) center center/cover no-repeat;
+}
+.bright header nav .gnb li a {
+  color: #202020;
+}
+.bright header nav .gnb li a:hover {
+  color: #26d2d3;
+}
+.bright header .bright_version span {
+  color: #202020;
+}
+.bright #home {
+  background: #fff;
+  color: #202020;
+}
+.bright #home .scroll_down_icon .scroll_down_icon_mouse {
+  border: 2px solid #202020;
+}
+.bright #home .scroll_down_icon .scroll_down_icon_mouse .scroll_down_icon_mouse_move {
+  background-color: #202020;
+}
+.bright #about {
+  background: #fff;
+}
+.bright #about .about_box {
+  background: #fff;
+  color: #202020;
+}
+.bright #stack {
+  background: #fff;
+  color: #202020;
+}
+.bright #project {
+  background: #fff;
+  color: #202020;
+}
+.bright #project .slideCountainer .slider_projects .slide_project .project_desc .project_title h3 {
+  color: #202020;
+}
+.bright #project .slideCountainer .slider_projects .slide_project .project_desc .project_title p {
+  color: #1a2d49;
+}
+.bright #project .slideCountainer .slider_projects .slide_project .project_desc .project_title .badge > span {
+  border: 2px solid #26d2d3;
+  color: #26d2d3;
+}
+.bright #project .slideCountainer .slider_projects .slide_project .project_desc button {
+  background: #1a2d49;
+  color: #fff;
+  transition: 0.3s;
+}
+.bright #project .slideCountainer .slider_projects .slide_project .project_desc button:hover {
+  background: #295c73;
+}
+.bright aside {
+  background: #fff;
+}
+.bright aside .aside_inner .top_sec h3 {
+  color: #202020;
+}
+.bright aside .aside_inner .top_sec p {
+  color: #202020;
+}
+.bright aside .aside_inner .top_sec .modal_badge > span {
+  border: 2px solid #26d2d3;
+  color: #274d4c;
+}
+.bright aside .aside_inner .buttons > button {
+  background: #1a2d49;
+  border: 2px solid #1a2d49;
+  transition: all 0.3s;
+}
+.bright aside .aside_inner .buttons > button a {
+  color: #fff;
+}
+.bright aside .aside_inner .buttons > button:hover {
+  background: #295c73;
+  border: 2px solid #295c73;
+}
+.bright aside .aside_inner .buttons > button:hover a {
+  color: #fff;
+}
+.bright aside .aside_inner .info_sec .overview h3 {
+  color: #202020;
+}
+.bright aside .aside_inner .info_sec .overview p {
+  color: #202020;
+}
+.bright aside .aside_inner .info_sec .work_info h3 {
+  color: #202020;
+}
+.bright aside .aside_inner .info_sec .work_info p {
+  color: #202020;
+}
+.bright aside .aside_inner .info_sec .work_info p span:nth-child(1) {
+  color: #c84b31;
+  font-weight: 700;
+}
+.bright aside .aside_inner .closeBtn .close {
+  background: #1a2d49;
+  color: #fff;
+  transition: all 0.3s;
+}
+.bright aside .aside_inner .closeBtn .close:hover {
+  background: #295c73;
+}
+.bright #work .tab_inner .btn li {
+  color: #000;
+}
+.bright #work .tab_inner .btn li:hover, .bright #work .tab_inner .btn li.active {
+  border-top: 2px solid #c84b31;
+  color: #c84b31;
+}
+.bright #work .tab_inner .tabs {
+  border: 1px solid #000;
+}
+.bright #work .tab_inner .tabs > div .tab_content a img {
+  border: 1px solid #000;
+}
+.bright #work .tab_inner .tabs > div .tab_content a h2 {
+  color: #202020;
+}
+.bright #work .tab_inner .tabs > div .tab_content p {
+  color: #202020;
+}
+.bright #work .tab_inner .work_desc p {
+  color: #202020;
+}
+.bright #contact {
+  background: #fff;
+  color: #202020;
+}
+.bright #contact .contact_main h1 a {
+  color: #202020;
+}
+.bright #contact .contact_main h1 a:hover {
+  color: #295c73;
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .bright header nav ul.gnb {
+    background: rgba(34, 34, 34, 0.8);
+  }
+  .bright header nav ul.gnb > li a {
+    color: #fff;
+  }
+  .bright div.toggle span {
+    background: #202020;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+  .bright header nav ul.gnb {
+    background: rgba(34, 34, 34, 0.8);
+  }
+  .bright header nav ul.gnb > li a {
+    color: #fff;
+  }
+  .bright div.toggle span {
+    background: #202020;
+  }
+  .bright div.toggle.active span {
+    background: #fff;
+  }
+  .bright #stack .skill_sec .skill_list {
+    border: 1px solid #202020;
+    border-radius: 20px;
   }
 }/*# sourceMappingURL=style.css.map */

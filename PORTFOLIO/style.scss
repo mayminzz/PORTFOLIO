@@ -14,14 +14,16 @@ $font-size: (
 );
 
 $color: (
-  hightlight3: #26d2d3,
   orange: #ec5717,
   white: #fff,
-  black: #202020,
+  dark: #202020,
   bg1: #1d1d1d,
   bg2: #222,
   hightlight1: #c84b31,
   hightlight2: #1a2d49,
+  hightlight3: #26d2d3,
+  hightlight4: #274d4c,
+  hightlight5: #1d3332,
 );
 
 * {
@@ -45,6 +47,7 @@ body {
 #container {
   width: 100%;
   font-family: inter;
+  overflow: hidden;
 }
 
 main.invisible {
@@ -64,14 +67,53 @@ header {
   background: transparent;
   z-index: 99;
   transition: 0.3s;
+  .bright_version {
+    position: absolute;
+    left: 10px;
+    margin-top: 10px;
+    text-align: center;
+    .button_wrap {
+      width: 50px;
+      height: 25px;
+      line-height: 30px;
+      border-radius: 20px;
+      border: 1px solid map-get($color, white);
+      display: flex;
+      align-items: center;
+      position: relative;
+      .toggle_button {
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        background: map-get($color, hightlight1);
+        transition: all 0.3s;
+        position: absolute;
+        left: 3px;
+        &:hover {
+          box-shadow: 0px 0px 5px #b1b1b1;
+        }
+        &.active {
+          position: absolute;
+          left: 60%;
+          background: map-get($color, hightlight3);
+        }
+      }
+    }
+    span {
+      display: block;
+      font-size: 10px;
+      margin-top: 1px;
+      color: map-get($color, white);
+    }
+  }
   .logo {
     width: 60px;
     height: 37px;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
+    .logo_img {
+      display: inline-block;
+      width: 60px;
+      height: 37px;
+      background: url(./img/logo.png) center center/cover no-repeat;
     }
   }
   nav {
@@ -157,10 +199,8 @@ header.bgChange {
       margin-top: 50px;
       display: inline-block;
       padding-left: 100px;
-      // overflow: hidden;
       h1 {
         font-size: map-get($font-size, small);
-        position: relative;
         font-family: pretendard;
         span {
           color: map-get($color, hightlight3);
@@ -179,7 +219,7 @@ header.bgChange {
       margin: 0 auto;
       display: block;
       border-radius: 50px;
-      border: 2px solid #fff;
+      border: 2px solid map-get($color, white);
       height: 50px;
       width: 25px;
       position: relative;
@@ -396,7 +436,7 @@ header.bgChange {
   }
 }
 
-//section 4 project
+//section4 project
 #project {
   width: 100%;
   display: flex;
@@ -477,7 +517,7 @@ header.bgChange {
               flex-direction: row;
               gap: 10px;
               > span {
-                border: 2px solid #274d4c;
+                border: 2px solid map-get($color, hightlight4);
                 border-radius: 20px;
                 padding: 5px 10px;
                 font-size: 14px;
@@ -489,10 +529,14 @@ header.bgChange {
             width: 200px;
             font-size: 18px;
             border: none;
-            background: #274d4c;
+            background: map-get($color, hightlight4);
             color: map-get($color, hightlight3);
             border-radius: 30px;
             padding: 16px 50px;
+            transition: 0.3s;
+            &:hover {
+              background: map-get($color, hightlight5);
+            }
           }
           a {
             display: none;
@@ -575,104 +619,121 @@ aside {
   transition: 0.6s;
   .aside_inner {
     width: 800px;
-  }
-  .top_sec {
-    margin-bottom: 30px;
-    h3 {
-      font-size: 40px;
-      margin-bottom: 14px;
-      color: #ddd;
-    }
-    p {
-      font-size: map-get($font-size, xsmall);
-      color: #ddd;
+    .top_sec {
       margin-bottom: 30px;
-    }
-    .modal_badge {
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-      > span {
-        border: 2px solid #274d4c;
-        border-radius: 20px;
-        padding: 5px 10px;
-        font-size: 14px;
-        color: map-get($color, hightlight3);
-      }
-    }
-  }
-  .buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    > button {
-      display: block;
-      width: 28%;
-      font-size: 18px;
-      border: none;
-      background: #274d4c;
-      border-radius: 30px;
-      padding: 16px 50px;
-      margin-bottom: 40px;
-      a {
-        color: map-get($color, hightlight3);
-      }
-    }
-  }
-  .detail_img {
-    width: 100%;
-    margin-bottom: 50px;
-    img {
-      width: 100%;
-      border-radius: 10px;
-      object-fit: cover;
-      object-position: center;
-    }
-  }
-  .info_sec {
-    .overview {
-      margin-bottom: 50px;
       h3 {
-        font-size: 28px;
-        color: #ddd;
-        margin-bottom: 10px;
-      }
-      p {
-        font-size: 16px;
-        color: #ccc;
-        line-height: 1.5;
-      }
-    }
-    .work_info {
-      h3 {
-        margin-bottom: 10px;
-        font-size: 28px;
+        font-size: 40px;
+        margin-bottom: 14px;
         color: #ddd;
       }
       p {
-        font-size: 16px;
-        color: #ccc;
-        line-height: 3;
-        span {
+        font-size: map-get($font-size, xsmall);
+        color: #ddd;
+        margin-bottom: 30px;
+      }
+      .modal_badge {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        > span {
+          border: 2px solid map-get($color, hightlight4);
+          border-radius: 20px;
+          padding: 5px 10px;
+          font-size: 14px;
           color: map-get($color, hightlight3);
-          margin-right: 30px;
         }
       }
     }
-  }
-  .closeBtn {
-    text-align: center;
-    .close {
-      width: 30%;
-      font-size: 18px;
-      border: none;
-      background: #274d4c;
-      color: map-get($color, hightlight3);
-      border-radius: 30px;
-      padding: 16px 30px;
-      margin-top: 50px;
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      > button {
+        display: block;
+        width: 28%;
+        font-size: 18px;
+        border: none;
+        background: #274d4c;
+        border-radius: 30px;
+        padding: 16px 50px;
+        margin-bottom: 40px;
+        transition: 0.3s;
+        &:hover {
+          background: map-get($color, hightlight5);
+        }
+        a {
+          color: map-get($color, hightlight3);
+        }
+      }
+    }
+    .detail_img {
+      width: 100%;
+      margin-bottom: 50px;
+      img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    .info_sec {
+      .overview {
+        margin-bottom: 50px;
+        h3 {
+          font-size: 28px;
+          color: #ddd;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 16px;
+          color: #ccc;
+          line-height: 1.5;
+        }
+      }
+      .work_info {
+        h3 {
+          margin-bottom: 10px;
+          font-size: 28px;
+          color: #ddd;
+        }
+        p {
+          font-size: 16px;
+          color: #ccc;
+          display: flex;
+          flex-direction: row;
+          line-height: 2.5rem;
+          > span {
+            margin-right: 30px;
+
+            &:nth-child(1) {
+              color: map-get($color, hightlight3);
+              flex: 2.5;
+            }
+            &:nth-child(2) {
+              flex: 7.5;
+            }
+          }
+        }
+      }
+    }
+    .closeBtn {
+      text-align: center;
+      .close {
+        width: 50%;
+        font-size: 18px;
+        border: none;
+        background: map-get($color, hightlight4);
+        color: map-get($color, hightlight3);
+        border-radius: 30px;
+        padding: 16px 30px;
+        margin-top: 50px;
+        transition: 0.3s;
+        &:hover {
+          background: map-get($color, hightlight5);
+        }
+      }
     }
   }
 }
@@ -729,38 +790,38 @@ aside {
           flex-wrap: wrap;
         }
         > .tab_content {
-          width: 300px;
+          width: 31%;
           a {
             width: 100%;
-            height: 150px;
+            height: 170px;
             display: inline-block;
             margin-bottom: 20px;
-          }
-          img {
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;
-            object-fit: cover;
-            object-position: center;
-            margin-bottom: 5px;
-            transition: 0.3s;
-            &:hover {
-              transform: scale(1.1);
+            img {
+              width: 100%;
+              height: 100%;
+              border-radius: 10px;
+              object-fit: cover;
+              object-position: center;
+              margin-bottom: 5px;
+              transition: 0.3s;
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+            h2 {
+              text-align: center;
+              font-size: map-get($font-size, xsmall);
+              color: map-get($color, white);
+              margin-bottom: 10px;
+              cursor: pointer;
             }
           }
-          h2 {
-            text-align: center;
-            font-size: map-get($font-size, xsmall);
+          p {
+            display: none;
             color: map-get($color, white);
-            margin-bottom: 10px;
-            cursor: pointer;
+            font-size: map-get($font-size, xsmall);
+            font-weight: 300;
           }
-        }
-        p {
-          display: none;
-          color: map-get($color, white);
-          font-size: map-get($font-size, xsmall);
-          font-weight: 300;
         }
       }
     }
@@ -938,6 +999,11 @@ aside {
       ul.gnb.show {
         display: flex;
       }
+    }
+    .bright_version {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
   div.toggle {
@@ -1125,10 +1191,10 @@ aside {
             flex-wrap: wrap;
           }
           > .tab_content {
-            width: 240px;
+            width: 30%;
             a {
               width: 100%;
-              height: 200px;
+              height: 150px;
               display: inline-block;
               margin-bottom: 20px;
             }
@@ -1156,7 +1222,7 @@ aside {
   }
 }
 
-//mobile version
+//tablet2 version
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   header {
     width: 100%;
@@ -1189,6 +1255,11 @@ aside {
       ul.gnb.show {
         display: flex;
       }
+    }
+    .bright_version {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
   div.toggle {
@@ -1392,7 +1463,7 @@ aside {
           color: map-get($color, white);
           padding: 7px 15px;
           font-weight: 800;
-          font-size: 17px;
+          font-size: 18px;
           cursor: pointer;
           position: relative;
         }
@@ -1403,25 +1474,25 @@ aside {
         > div {
           display: none;
           > .tab_content {
-            width: 180px;
+            width: 30%;
             a {
               width: 100%;
               height: 120px;
               display: inline-block;
               margin-bottom: 20px;
-            }
-            img {
-              width: 100%;
-              height: 100%;
-              border-radius: 10px;
-              object-fit: cover;
-              object-position: center;
-            }
-            h2 {
-              font-size: 14px;
-              text-align: center;
-              color: map-get($color, white);
-              margin-bottom: 10px;
+              img {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                object-fit: cover;
+                object-position: center;
+              }
+              h2 {
+                font-size: map-get($font-size, toosmall);
+                text-align: center;
+                color: map-get($color, white);
+                margin-bottom: 10px;
+              }
             }
             p {
               color: map-get($color, white);
@@ -1465,7 +1536,7 @@ aside {
           margin: 15px;
           a {
             color: map-get($color, white);
-            font-size: 40px;
+            font-size: map-get($font-size, medium);
             transition: 0.3s;
           }
           a.active {
@@ -1476,6 +1547,11 @@ aside {
       ul.gnb.show {
         display: flex;
       }
+    }
+    .bright_version {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
   div.toggle {
@@ -1519,19 +1595,39 @@ aside {
   #home {
     padding: 30px;
     .title {
+      text-align: center;
       padding: 0;
+      margin-top: -100px;
       .title_img {
         left: 0;
+        bottom: -130px;
         img {
           width: 160px;
         }
       }
       .title_text {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &::before {
+          width: 100%;
+        }
         > span {
-          font-size: 35px;
+          font-size: 26px;
+          margin-bottom: 5px;
           &.small {
-            font-size: map-get($font-size, large);
+            font-size: map-get($font-size, xsmall);
+            margin-top: 5px;
           }
+        }
+      }
+      .subTitle {
+        margin-top: 28px;
+        text-align: right;
+        word-break: keep-all;
+        h1 {
+          font-size: map-get($font-size, xsmall);
+          line-height: 2rem;
         }
       }
     }
@@ -1698,14 +1794,21 @@ aside {
           flex-wrap: wrap;
         }
       }
-      .aLink {
-        width: 63%;
+    }
+    .buttons {
+      justify-content: space-between;
+      gap: 0;
+      button.aLink,
+      button.figmaView {
+        width: 50%;
+        padding: 10px;
+        a {
+          font-size: 15px;
+        }
       }
     }
-    button {
-      width: 50%;
-    }
   }
+
   // work
   #work {
     padding: 0px 20px;
@@ -1732,34 +1835,29 @@ aside {
         width: 100%;
         padding: 5px;
         padding-top: 10px;
-        height: 740px;
+        height: 600px;
         > div {
           display: none;
           > .tab_content {
-            width: 145px;
+            width: 43%;
             a {
               width: 100%;
-              height: 95px;
+              height: 85px;
               display: inline-block;
               margin-bottom: 18px;
-            }
-            img {
-              width: 100%;
-              height: 100%;
-              border-radius: 10px;
-              object-fit: cover;
-              object-position: center;
-            }
-            h2 {
-              font-size: 14px;
-              text-align: center;
-              color: map-get($color, white);
-              margin-bottom: 10px;
-            }
-            p {
-              color: map-get($color, white);
-              font-size: map-get($font-size, toosmall);
-              font-weight: 300;
+              img {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                object-fit: cover;
+                object-position: center;
+              }
+              h2 {
+                font-size: 13px;
+                text-align: center;
+                color: map-get($color, white);
+                margin-bottom: 10px;
+              }
             }
           }
         }
@@ -1774,9 +1872,9 @@ aside {
           display: none;
           color: map-get($color, white);
           font-family: pretendard;
-          font-size: map-get($font-size, toosmall);
+          font-size: 15px;
           transition: all 0.3s;
-          line-height: 2rem;
+          line-height: 1.4rem;
           word-break: keep-all;
           span {
             color: map-get($color, hightlight3);
@@ -1848,5 +1946,281 @@ aside {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+//★★★★★★ bright version ★★★★★★
+body.bright {
+  background: #fff;
+}
+.bright {
+  header {
+    z-index: 10;
+    background: map-get($color, white);
+    border-bottom: 1px solid #000;
+    &.bgChange {
+      background: #eee;
+    }
+    .button_wrap {
+      border: 1px solid map-get($color, dark);
+    }
+    .logo {
+      .logo_img {
+        background: url(./img/logo_dark.png) center center/cover no-repeat;
+      }
+    }
+    nav {
+      .gnb {
+        li {
+          a {
+            color: map-get($color, dark);
+            &:hover {
+              color: map-get($color, hightlight3);
+            }
+          }
+        }
+      }
+    }
+    .bright_version {
+      span {
+        color: map-get($color, dark);
+      }
+    }
+  }
+  #home {
+    background: map-get($color, white);
+    color: map-get($color, dark);
+    .scroll_down_icon {
+      .scroll_down_icon_mouse {
+        border: 2px solid map-get($color, dark);
+        .scroll_down_icon_mouse_move {
+          background-color: map-get($color, dark);
+        }
+      }
+    }
+  }
+  #about {
+    background: map-get($color, white);
+    .about_box {
+      background: map-get($color, white);
+      color: map-get($color, dark);
+    }
+  }
+  #stack {
+    background: map-get($color, white);
+    color: map-get($color, dark);
+  }
+  #project {
+    background: map-get($color, white);
+    color: map-get($color, dark);
+    .slideCountainer {
+      .slider_projects {
+        .slide_project {
+          .project_desc {
+            .project_title {
+              h3 {
+                color: map-get($color, dark);
+              }
+              p {
+                color: map-get($color, hightlight2);
+              }
+              .badge {
+                > span {
+                  border: 2px solid map-get($color, hightlight3);
+                  color: map-get($color, hightlight3);
+                }
+              }
+            }
+            button {
+              background: map-get($color, hightlight2);
+              color: map-get($color, white);
+              transition: 0.3s;
+              &:hover {
+                background: #295c73;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  aside {
+    background: #fff;
+    .aside_inner {
+      .top_sec {
+        h3 {
+          color: map-get($color, dark);
+        }
+        p {
+          color: map-get($color, dark);
+        }
+        .modal_badge {
+          > span {
+            border: 2px solid map-get($color, hightlight3);
+            color: map-get($color, hightlight4);
+          }
+        }
+      }
+      .buttons {
+        > button {
+          background: map-get($color, hightlight2);
+          border: 2px solid map-get($color, hightlight2);
+          transition: all 0.3s;
+          a {
+            color: map-get($color, white);
+          }
+          &:hover {
+            // color: map-get($color, hightlight2);
+            // background: map-get($color, white);
+            // border: 2px solid map-get($color, hightlight2);
+            background: #295c73;
+            border: 2px solid #295c73;
+            a {
+              color:  map-get($color, white);
+            }
+          }
+        }
+      }
+      .info_sec {
+        .overview {
+          h3 {
+            color: map-get($color, dark);
+          }
+          p {
+            color: map-get($color, dark);
+          }
+        }
+        .work_info {
+          h3 {
+            color: map-get($color, dark);
+          }
+          p {
+            color: map-get($color, dark);
+            span {
+              &:nth-child(1) {
+                color: map-get($color, hightlight1);
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+      .closeBtn {
+        .close {
+          background: map-get($color, hightlight2);
+          // border: 2px solid map-get($color, hightlight2);
+          color: map-get($color, white);
+          transition: all 0.3s;
+          &:hover {
+            // color: map-get($color, hightlight2);
+            // background: map-get($color, white);
+            // border: 2px solid map-get($color, hightlight2);
+            background: #295c73;
+          }
+        }
+      }
+    }
+  }
+  #work {
+    .tab_inner {
+      .btn {
+        li {
+          color: #000;
+          &:hover,
+          &.active {
+            border-top: 2px solid map-get($color, hightlight1);
+            color: map-get($color, hightlight1);
+          }
+        }
+      }
+      .tabs {
+        border: 1px solid #000;
+        > div {
+          .tab_content {
+            a {
+              img {
+                border: 1px solid #000;
+              }
+              h2 {
+                color: map-get($color, dark);
+              }
+            }
+            p {
+              color: map-get($color, dark);
+            }
+          }
+        }
+      }
+      .work_desc {
+        p {
+          color: map-get($color, dark);
+        }
+      }
+    }
+  }
+  #contact {
+    background: map-get($color, white);
+    color: map-get($color, dark);
+    .contact_main {
+      h1 {
+        a {
+          color: map-get($color, dark);
+          &:hover {
+            color: #295c73;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    header {
+      nav {
+        ul.gnb {
+          background: rgba(34, 34, 34, 0.8);
+          > li {
+            a {
+              color: map-get($color, white);
+            }
+          }
+        }
+      }
+    }
+    div.toggle {
+      span {
+        background: map-get($color, dark);
+      }
+    }
+  }
+  @media screen and (min-width: 320px) and (max-width: 1200px) {
+    header {
+      nav {
+        ul.gnb {
+          background: rgba(34, 34, 34, 0.8);
+          > li {
+            a {
+              color: map-get($color, white);
+            }
+          }
+        }
+      }
+    }
+    div.toggle {
+      span {
+        background: map-get($color, dark);
+      }
+    }
+    div.toggle.active {
+      span {
+        background: map-get($color, white);
+      }
+    }
+    #stack {
+      .skill_sec {
+        .skill_list {
+          border: 1px solid map-get($color, dark);
+          border-radius: 20px;
+        }
+      }
+    }
   }
 }

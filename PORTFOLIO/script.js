@@ -24,6 +24,23 @@ gnbLi.forEach((li) => {
   });
 });
 
+//Bright Version
+const toggleBtn = document.querySelector(".toggle_button");
+const container = document.querySelector("#container");
+const modeTxt = document.querySelector(".bright_version > span");
+const body = document.querySelector("body");
+
+toggleBtn.addEventListener("click", () => {
+  toggleBtn.classList.toggle("active");
+  container.classList.toggle("bright");
+  body.classList.toggle("bright");
+  if (modeTxt.innerText === "Light Mode") {
+    modeTxt.innerText = "Dark Mode";
+  } else {
+    modeTxt.innerText = "Light Mode";
+  }
+});
+
 //home
 const spanElements = document.querySelectorAll(".title_text > span");
 const count = spanElements.length;
@@ -35,10 +52,6 @@ const spanList = (numbers) => {
   });
 };
 const titleTxt = document.querySelector(".title+text");
-
-// if (innerWidth < 610) {
-//   titleTxt.innerHTML = `</>`;
-// }
 
 const delayplus = () => {
   let Delayarr = [];
@@ -157,12 +170,12 @@ for (let modal of modals) {
     if (dataIdx === "0") {
       document
         .querySelector(".detail_img > img")
-        .setAttribute("src", "./img/aesop.png");
+        .setAttribute("src", "./img/myPage.png");
     }
     if (dataIdx === "1") {
       document
         .querySelector(".detail_img > img")
-        .setAttribute("src", "./img/myPage.png");
+        .setAttribute("src", "./img/aesop.png");
     }
 
     aside.querySelector(".top_sec > h3").innerText = tit;

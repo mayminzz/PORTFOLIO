@@ -25,9 +25,14 @@
   <body>
     <div id="container">
       <header>
+        <div class="bright_version">
+          <div class="button_wrap">
+            <div class="toggle_button"></div>
+          </div>
+          <span>Light Mode</span>
+        </div>
         <div class="logo">
-          <a href="#home">
-            <img src="./img/logo.png" alt="logo" />
+          <a class="logo_img" href="#home">
           </a>
         </div>
         <nav>
@@ -157,8 +162,8 @@
               <ul>
                 <li>Firebase를 통한 호스팅이 가능합니다.</li>
                 <li>
-                  Github사용이 가능하며, 팀 프로젝트를 포함한 모든 작업시
-                  업로드하였습니다.
+                  Github사용이 가능하며, 모든 작업물을
+                  업로드하여 버전을 관리하였습니다.
                 </li>
                 <li>
                   <img src="./img/firebase.png" alt="firebase" />
@@ -184,59 +189,6 @@
             <ul class="slider_projects">
               <li class="slide_project" data-idx="0">
                 <div class="project_photo">
-                  <img src="./img/aesop.png" alt="aesop" />
-                </div>
-                <div class="project_desc">
-                  <div class="project_title">
-                    <h3>이솝 Aesop</h3>
-                    <p>사이트 리디자인 & 클론코딩</p>
-                    <div class="badge">
-                      <span>#PM</span>
-                      <span>#디자인 50%</span>
-                      <span>#팀 프로젝트</span>
-                      <span>#반응형</span>
-                    </div>
-                  </div>
-                  <button data-idx="0">상세보기</button>
-                  <a href=" https://aesop-home.web.app" target="_blank"
-                    >사이트 바로가기</a
-                  >
-                  <div class="project_info_sec">
-                    <div class="overview">
-                      <h3>Overview.</h3>
-                      <p>
-                        이솝 페이지를 분석한 후, 사용자 경험을 향상시키기 위해
-                        리뉴얼을 고려하면서 기업의 특유한 분위기를 유지하고
-                        고급스러움을 강조하는 방향으로 작업하였습니다. 불편한
-                        점들을 개선하여 전반적인 사용자 만족도를 높이기에 중점을
-                        두었습니다.
-                      </p>
-                      <div class="figmaView">
-                        <button>
-                          <a
-                            href="https://www.figma.com/file/bNZyfITYiO8DDgNYHePr5j/Untitled?type=design&node-id=0%3A1&mode=dev&t=EXesJ7B7iziv97AE-1"
-                            >기술서 보기</a
-                          >
-                        </button>
-                      </div>
-                    </div>
-                    <div class="work_info">
-                      <h3>Work Info.</h3>
-                      <p><span>제작 기간</span>2023.10.23 ~ 2023.11.22</p>
-                      <p>
-                        <span>제작 영역</span>PM으로서 조원 관리, 기획, 디자인,
-                        퍼블리싱
-                      </p>
-                      <p>
-                        <span>사용 툴</span>HTML, SCSS, Javascript, Photoshop,
-                        Fingma
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="slide_project" data-idx="1">
-                <div class="project_photo">
                   <img src="./img/myPage.png" alt="myPage" />
                 </div>
                 <div class="project_desc">
@@ -250,7 +202,7 @@
                       <span>#반응형</span>
                     </div>
                   </div>
-                  <button data-idx="1">상세보기</button>
+                  <button data-idx="0">상세보기</button>
                   <a
                     href="https://kmj-introduce-project.web.app"
                     target="_blank"
@@ -277,19 +229,73 @@
                     </div>
                     <div class="work_info">
                       <h3>Work Info.</h3>
-                      <p><span>제작 기간</span>2023.10.01 ~ 2023.10.23</p>
+                      <p><span>제작 기간</span><span>2023.10.01 ~ 2023.10.23</span></p>
                       <p>
-                        <span>제작 영역</span>기획, 디자인, 퍼블리싱 100% 혼자
-                        작업한 작업물입니다.
+                        <span>제작 영역</span><span>기획, 디자인, 퍼블리싱 100% 혼자
+                          작업한 작업물입니다.</span>
                       </p>
                       <p>
-                        <span>사용 툴</span>HTML, CSS, Javascript, Photoshop,
-                        Fingma
+                        <span>사용 툴</span><span>HTML, CSS, Javascript, Photoshop,
+                          Fingma</span>
                       </p>
                     </div>
                   </div>
                 </div>
               </li>
+              <li class="slide_project" data-idx="1">
+                <div class="project_photo">
+                  <img src="./img/aesop.png" alt="aesop" />
+                </div>
+                <div class="project_desc">
+                  <div class="project_title">
+                    <h3>이솝 Aesop</h3>
+                    <p>사이트 리디자인 & 클론코딩</p>
+                    <div class="badge">
+                      <span>#PM</span>
+                      <span>#디자인 50%</span>
+                      <span>#팀 프로젝트</span>
+                      <span>#반응형</span>
+                    </div>
+                  </div>
+                  <button data-idx="1">상세보기</button>
+                  <a href=" https://aesop-home.web.app" target="_blank"
+                    >사이트 바로가기</a
+                  >
+                  <div class="project_info_sec">
+                    <div class="overview">
+                      <h3>Overview.</h3>
+                      <p>
+                        이솝 페이지를 분석한 후, 사용자 경험을 향상시키기 위해
+                        리뉴얼을 고려하면서 기업의 특유한 분위기를 유지하고
+                        고급스러움을 강조하는 방향으로 작업하였습니다. 불편한
+                        점들을 개선하여 전반적인 사용자 만족도를 높이기에 중점을
+                        두었습니다.
+                      </p>
+                      <div class="figmaView">
+                        <button>
+                          <a
+                            href="https://www.figma.com/file/bNZyfITYiO8DDgNYHePr5j/Untitled?type=design&node-id=0%3A1&mode=dev&t=EXesJ7B7iziv97AE-1"
+                            >기술서 보기</a
+                          >
+                        </button>
+                      </div>
+                    </div>
+                    <div class="work_info">
+                      <h3>Work Info.</h3>
+                      <p><span>제작 기간</span><span>2023.10.23 ~ 2023.11.22</span></p>
+                      <p>
+                        <span>제작 영역</span><span>PM으로서 조원 관리, 기획, 디자인,
+                          퍼블리싱</span>
+                      </p>
+                      <p>
+                        <span>사용 툴</span><span>HTML, SCSS, Javascript, Photoshop,
+                          Fingma</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+           
             </ul>
             <p class="pager"></p>
           </div>
@@ -424,6 +430,15 @@
                     예제입니다.
                   </p>
                 </div>
+                <div class="tab_content">
+                  <a href="https://lotto-1c57a.web.app" target="_blank">
+                    <img src="./img/lotto.png" alt="heritage" />
+                    <h2>로또 추첨기</h2>
+                  </a>
+                  <p>
+                    <span>Math.random()</span> 함수를 사용하여 임의의 숫자를 생성하여 로또 번호를 추첨합니다.
+                  </p>
+                </div>
               </div>
               <div id="tab6" class="tab">
                 <div class="tab_content">
@@ -454,7 +469,7 @@
                 </div>
                 <div class="tab_content">
                   <a href="https://todolist-9345c.web.app" target="_blank">
-                    <img src="./img/todolist.png" alt="todolist" />
+                    <img src="./img/todoList.png" alt="todoList" />
                     <h2>To Do List</h2>
                   </a>
                   <p>
