@@ -835,7 +835,7 @@ aside {
         display: none;
         color: map-get($color, white);
         font-family: pretendard;
-        font-size: map-get($font-size, xsmall);
+        font-size: map-get($font-size, toosmall);
         transition: all 0.3s;
         line-height: 2rem;
         word-break: keep-all;
