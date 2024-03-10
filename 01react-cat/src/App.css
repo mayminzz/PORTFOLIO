@@ -1,0 +1,14 @@
+@font-face {
+  font-family: SimKyungha;
+  src: url(./assets/fonts/SimKyungha.ttf);
+}
+
+* {
+  font-family: "SimKyungha";
+}
+
+.cat {
+  font-style: normal;
+  font-weight: bold;
+  color: rgb(22, 61, 138);
+}
