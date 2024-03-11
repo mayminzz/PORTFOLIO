@@ -22,6 +22,33 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// header menu open
+const visibleMenu = document.querySelectorAll(".over_detail_menu");
+const gnbLists = document.querySelectorAll(".gnb> li");
+// const gnbListA = document.querySelectorAll(".gnb> li > a");
+
+gnbLists.forEach((list) => {
+  list.addEventListener("mouseover", () => {
+    list.classList.add("highlight");
+    header.classList.add("active");
+    visibleMenu.forEach((menu) => {
+      menu.classList.add("visible");
+      header.style.borderBottom = "none";
+    });
+  });
+  list.addEventListener("mouseleave", () => {
+    list.classList.remove("highlight");
+  });
+  header.addEventListener("mouseleave", () => {
+    header.classList.remove("active");
+    visibleMenu.forEach((menu) => {
+      menu.classList.remove("visible");
+      header.style.borderBottom = "";
+    });
+  });
+});
+
+
 // live contents
 const contents = document.querySelector(".live_contents");
 const URL = "./mc.json";
@@ -60,6 +87,7 @@ fetch(URL)
     </div>
       `;
     });
+
     // view more live contents
     const viewmoreBtn = document.querySelector(".viewmore_btn");
     viewmoreBtn.addEventListener("click", () => {
@@ -67,31 +95,6 @@ fetch(URL)
       viewmoreBtn.remove(viewmoreBtn);
     });
   });
-
-// header menu open
-const visibleMenu = document.querySelectorAll(".over_detail_menu");
-const gnbLists = document.querySelectorAll(".gnb> li");
-
-gnbLists.forEach((list) => {
-  list.addEventListener("mouseover", () => {
-    list.classList.add("highlight");
-    gnb.classList.add("active");
-    visibleMenu.forEach((menu) => {
-      menu.classList.add("visible");
-      header.style.borderBottom = "none";
-    });
-  });
-  list.addEventListener("mouseleave", () => {
-    list.classList.remove("highlight");
-  });
-  gnb.addEventListener("mouseleave", () => {
-    gnb.classList.remove("active");
-    visibleMenu.forEach((menu) => {
-      menu.classList.remove("visible");
-      header.style.borderBottom = "";
-    });
-  });
-});
 
 // 통합검색
 const body = document.querySelector("body");

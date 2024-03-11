@@ -22,15 +22,15 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
 // header menu open
 const visibleMenu = document.querySelectorAll(".over_detail_menu");
 const gnbLists = document.querySelectorAll(".gnb> li");
+// const gnbListA = document.querySelectorAll(".gnb> li > a");
 
 gnbLists.forEach((list) => {
   list.addEventListener("mouseover", () => {
     list.classList.add("highlight");
-    gnb.classList.add("active");
+    header.classList.add("active");
     visibleMenu.forEach((menu) => {
       menu.classList.add("visible");
       header.style.borderBottom = "none";
@@ -39,14 +39,62 @@ gnbLists.forEach((list) => {
   list.addEventListener("mouseleave", () => {
     list.classList.remove("highlight");
   });
-  gnb.addEventListener("mouseleave", () => {
-    gnb.classList.remove("active");
+  header.addEventListener("mouseleave", () => {
+    header.classList.remove("active");
     visibleMenu.forEach((menu) => {
       menu.classList.remove("visible");
       header.style.borderBottom = "";
     });
   });
 });
+
+
+// live contents
+const contents = document.querySelector(".live_contents");
+const URL = "./mc.json";
+fetch(URL)
+  .then((response) => response.json())
+  .then((json) => {
+    let output = "";
+    json.contents.forEach((item) => {
+      output += `
+      <div class="live_content">
+        <a href="">
+          <div class="pic">
+            <img src="${item.img}" alt="${item.alt}"/>
+          </div>
+          <div class="desc">
+            <h2>${item.description}</h2>
+          </div>
+        </a>
+      </div>
+      `;
+    });
+
+    contents.innerHTML = output;
+    let moreOutput = "";
+    json.moreContents.forEach((item) => {
+      moreOutput += `
+      <div class="live_content">
+      <a href="">
+        <div class="pic">
+          <img src="${item.img}" alt="${item.alt}"/>
+        </div>
+        <div class="desc">
+          <h2>${item.description}</h2>
+        </div>
+      </a>
+    </div>
+      `;
+    });
+
+    // view more live contents
+    const viewmoreBtn = document.querySelector(".viewmore_btn");
+    viewmoreBtn.addEventListener("click", () => {
+      contents.innerHTML += moreOutput;
+      viewmoreBtn.remove(viewmoreBtn);
+    });
+  });
 
 // 통합검색
 const body = document.querySelector("body");

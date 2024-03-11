@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>맥도날드</title>
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/bd0a8925a1.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom css & js -->
     <link rel="stylesheet" href="./style.css" />
     <script defer src="./script.js"></script>
   </head>
@@ -12,9 +18,7 @@
     <div id="wrap">
       <header>
         <div class="logo">
-          <a href="https://mcdonald-s-21c5f.web.app/">
-            <img src="./img/mcdonald_logo.png" alt="logo" />
-          </a>
+          <img src="./img/mcdonald_logo.png" alt="logo" />
         </div>
         <nav>
           <ul class="gnb">
@@ -48,7 +52,7 @@
               </ul>
             </li>
             <li>
-              <a href="https://mcdonald-story.web.app/" target="_blank">Story</a>
+              <a href="https://mcdonald-story.web.app">Story</a>
               <ul class="over_detail_menu">
                 <li><a href="">브랜드 소개</a></li>
                 <li><a href="">사회적 책임과 지원</a></li>
@@ -84,7 +88,6 @@
       </header>
       <div id="container top">
         <section class="banner_section">
-          <button class="left_btn"><i class="fas fa-chevron-left"></i></button>
           <ul class="slide_contents">
             <li class="slide_content">
               <img src="./img/main_banner_img1.jpeg" alt="banner01" />
@@ -99,9 +102,14 @@
               <img src="./img/main_banner_img4.jpeg" alt="banner04" />
             </li>
           </ul>
-          <button class="right_btn">
-            <i class="fas fa-chevron-right"></i>
-          </button>
+          <div class="controls">
+            <button class="prev_btn">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="next_btn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
         </section>
         <section class="live_content_section">
           <div class="inner">

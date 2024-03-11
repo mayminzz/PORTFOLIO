@@ -18,7 +18,6 @@ gnbLists.forEach((list) => {
 
 // 헤더 영역에서 마우스 이탈 이벤트 추가
 header.addEventListener("mouseleave", () => {
-  const detailBoxes = document.querySelectorAll(".detail_list_box");
   detailBoxes.forEach((detailBox) => {
     detailBox.classList.remove("active");
   });

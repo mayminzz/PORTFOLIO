@@ -17,6 +17,7 @@
   font-family: regular;
   font-size: 16px;
   color: #292929;
+  scroll-behavior: smooth;
 }
 ul,
 li {
@@ -86,7 +87,7 @@ header.scrollEffect .gnb > li {
   position: relative;
 }
 
-.gnb::before {
+header::before {
   content: "";
   display: none;
   width: 100vw;
@@ -95,15 +96,16 @@ header.scrollEffect .gnb > li {
   border-top: 1px solid #f1f1f1;
   position: absolute;
   top: 100%;
-  left: -64%;
+  left: 0;
   border-bottom: 1px solid #ffbc0d;
   padding: 35px 10px 45px;
 }
-.gnb.active::before {
+header.active::before {
   display: block;
 }
 .gnb.activeSmall {
   height: 80px;
+  margin-left: 50px;
 }
 .gnb.activeSmall::before {
   top: 100%;
@@ -140,7 +142,7 @@ header.scrollEffect .gnb > li {
   font-size: 20px;
   font-family: bold;
   margin-top: 85px;
-}
+} 
 .right_gnb {
   display: flex;
   flex-direction: row;
@@ -292,7 +294,7 @@ header.scrollEffect .gnb > li {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  border: 1px solid #f00;
+  border: 1px solid #f0f;
 }
 .prev_btn {
   border-radius: 0 10px 10px 0;
@@ -313,6 +315,12 @@ header.scrollEffect .gnb > li {
   height: 100%;
   display: flex;
   flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.slide_contents.animated {
+  transition: left 0.3s ease-in;
 }
 .slide_content {
   width: 100%;
