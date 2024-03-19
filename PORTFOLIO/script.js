@@ -1,11 +1,3 @@
-const header = document.querySelector("header");
-header.addEventListener("mouseover", () => {
-  header.classList.add("bgChange");
-});
-header.addEventListener("mouseleave", () => {
-  header.classList.remove("bgChange");
-});
-
 const toggle = document.querySelector(".toggle");
 const gnb = document.querySelector(".gnb");
 
@@ -164,8 +156,8 @@ for (let modal of modals) {
     const hashTxt =
       e.currentTarget.parentNode.querySelector(".badge").innerHTML;
     const overview = e.currentTarget.parentNode.querySelector(
-      ".project_info_sec .overview > p"
-    ).innerText;
+      ".project_info_sec .overview"
+    ).innerHTML;
     const workInfo = e.currentTarget.parentNode.querySelector(
       ".project_info_sec .work_info"
     ).innerHTML;
@@ -176,8 +168,6 @@ for (let modal of modals) {
     const figmaLink = e.currentTarget.parentNode
       .querySelector(".figmaView button a")
       .getAttribute("href");
-
-    console.log(figmaLink);
 
     const dataIdx = e.currentTarget.getAttribute("data-idx");
 
@@ -191,11 +181,21 @@ for (let modal of modals) {
         .querySelector(".detail_img > img")
         .setAttribute("src", "./img/aesop.png");
     }
+    if (dataIdx === "2") {
+      document
+        .querySelector(".detail_img > img")
+        .setAttribute("src", "./img/shinhan_img.png");
+    }
+    if (dataIdx === "3") {
+      document
+        .querySelector(".detail_img > img")
+        .setAttribute("src", "./img/etude.png");
+    }
 
     aside.querySelector(".top_sec > h3").innerText = tit;
     aside.querySelector(".top_sec > p").innerText = subTxt;
     aside.querySelector(".modal_badge").innerHTML = hashTxt;
-    aside.querySelector(".overview > p").innerHTML = overview;
+    aside.querySelector(".overview").innerHTML = overview;
     aside.querySelector(".work_info").innerHTML = workInfo;
     aside.querySelector(".aLink > a").setAttribute("href", aLink);
     aside

@@ -58,13 +58,13 @@ header {
   width: 100%;
   padding: 0 150px;
   height: 65px;
+  background: map-get($color, dark);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-family: "Crimson Text", serif;
   position: fixed;
-  background: transparent;
   z-index: 99;
   transition: 0.3s;
   .bright_version {
@@ -143,7 +143,7 @@ header {
   }
 }
 header.bgChange {
-  background: rgba(10, 10, 10, 0.4);
+  box-shadow: 0px 5px 5px rgba(255, 255, 255, 0.3);
 }
 
 // section1 Home
@@ -166,7 +166,7 @@ header.bgChange {
     .title_img {
       position: absolute;
       bottom: -40px;
-      left: 120px;
+      left: 100px;
       img {
         width: 200px;
       }
@@ -306,7 +306,6 @@ header.bgChange {
 // section2 About
 #about {
   width: 100%;
-  height: 100vh;
   padding: 160px 150px;
   .about_box {
     display: flex;
@@ -340,7 +339,7 @@ header.bgChange {
         }
       }
       p {
-        font-size: map-get($font-size, small);
+        font-size: map-get($font-size, xsmall);
         margin-bottom: 10px;
         &:last-of-type {
           margin-top: 30px;
@@ -401,9 +400,10 @@ header.bgChange {
       }
       ul li {
         margin-bottom: 5px;
-        font-size: map-get($font-size, base);
+        font-size: 15px;
         position: relative;
         margin-left: 15px;
+        line-height: 1.4rem;
         &::before {
           content: "";
           display: block;
@@ -429,6 +429,7 @@ header.bgChange {
         }
         img {
           height: 34px;
+          margin-top: 10px;
         }
       }
     }
@@ -438,7 +439,6 @@ header.bgChange {
 //section4 project
 #project {
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -471,7 +471,7 @@ header.bgChange {
     padding-top: 40px;
     animation: btt 1s linear both;
     .slider_projects {
-      width: 200%;
+      width: 400%;
       height: 100vh;
       display: flex;
       flex-direction: row;
@@ -507,8 +507,8 @@ header.bgChange {
               font-size: 40px;
               margin-bottom: 14px;
             }
-            p {
-              font-size: map-get($font-size, xsmall);
+            > p {
+              font-size: map-get($font-size, base);
               color: #ddd;
               margin-bottom: 30px;
             }
@@ -599,7 +599,7 @@ header.bgChange {
 }
 
 aside.on {
-  opacity: 1; /* Click에 따라서 값이 바뀜 => 0 */
+  opacity: 1;
   transform: scale(1);
 }
 aside {
@@ -607,8 +607,8 @@ aside {
   background: #222;
   position: absolute;
   top: 0;
-  left: 0; /* Click에 따라서 값이 바뀜 => -100% */
-  opacity: 0; /* Click에 따라서 값이 바뀜 => 0 */
+  left: 0; 
+  opacity: 0; 
   z-index: 2;
   transform: scale(0);
   display: flex;
@@ -626,7 +626,7 @@ aside {
         margin-bottom: 14px;
         color: #ddd;
       }
-      p {
+      > p {
         font-size: map-get($font-size, xsmall);
         color: #ddd;
         margin-bottom: 30px;
@@ -663,7 +663,7 @@ aside {
         &:hover {
           background: map-get($color, hightlight5);
         }
-        a {
+        > a {
           color: map-get($color, hightlight3);
         }
       }
@@ -680,16 +680,20 @@ aside {
     }
     .info_sec {
       .overview {
-        margin-bottom: 50px;
+        margin-bottom: 60px;
         h3 {
           font-size: 28px;
           color: #ddd;
           margin-bottom: 10px;
         }
-        p {
+        > p {
+          width: 100%;
+          display: block;
           font-size: 16px;
           color: #ccc;
           line-height: 1.5;
+          margin-bottom: 30px;
+          word-break: keep-all;
         }
       }
       .work_info {
@@ -703,16 +707,21 @@ aside {
           color: #ccc;
           display: flex;
           flex-direction: row;
-          line-height: 2.5rem;
+          line-height: 3rem;
           > span {
             margin-right: 30px;
-
             &:nth-child(1) {
               color: map-get($color, hightlight3);
               flex: 2.5;
             }
             &:nth-child(2) {
               flex: 7.5;
+              display: flex;
+              align-items: center;
+              gap: 20px;
+              img {
+                width: 30px;
+              }
             }
           }
         }
@@ -738,8 +747,8 @@ aside {
   }
 }
 
-// work
-#work {
+// Example
+#example {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -774,35 +783,31 @@ aside {
     }
     .tabs {
       width: 100%;
-      height: 80vh;
-      border-radius: 10px;
-      padding: 20px;
-      border: 1px solid #999999;
       > div {
         display: none;
         &.active {
           display: flex;
           flex-direction: row;
-          justify-content: center;
-          justify-items: center;
+          justify-content: flex-start;
           align-items: center;
-          gap: 30px;
+          gap: 22px;
           flex-wrap: wrap;
         }
         > .tab_content {
-          width: 31%;
+          width: 32%;
+          position: relative;
           a {
             width: 100%;
             height: 200px;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             img {
               width: 100%;
               height: 100%;
               border-radius: 10px;
               object-fit: cover;
               object-position: center;
-              margin-bottom: 5px;
+              margin-bottom: 20px;
               transition: 0.3s;
               &:hover {
                 transform: scale(1.1);
@@ -816,34 +821,56 @@ aside {
               cursor: pointer;
             }
           }
-          p {
+          .card_desc {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
             display: none;
-            color: map-get($color, white);
-            font-size: map-get($font-size, xsmall);
-            font-weight: 300;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: map-get($color, white);
+            padding: 10px;
+            &.cardRotation {
+              display: block;
+            }
+            p {
+              display: block;
+              margin-bottom: 10px;
+              font-size: map-get($font-size, toosmall);
+              span {
+                color: map-get($color, hightlight3);
+              }
+            }
+            .use_skill {
+              h2 {
+                display: inline-block;
+                font-size: map-get($font-size, xsmall);
+                position: relative;
+                color: map-get($color, hightlight3);
+                &::before {
+                  content: "";
+                  width: 100%;
+                  height: 1px;
+                  display: block;
+                  position: absolute;
+                  bottom: 0px;
+                  left: 0px;
+                  color: map-get($color, hightlight2);
+                }
+              }
+              .skill_img {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 10px;
+                img {
+                  width: 40px;
+                }
+              }
+            }
           }
-        }
-      }
-    }
-    .work_desc {
-      text-align: center;
-      position: absolute;
-      bottom: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      p {
-        display: none;
-        color: map-get($color, white);
-        font-family: pretendard;
-        font-size: map-get($font-size, toosmall);
-        transition: all 0.3s;
-        line-height: 2rem;
-        word-break: keep-all;
-        span {
-          color: map-get($color, hightlight3);
-        }
-        &.overAppear {
-          display: block;
         }
       }
     }
@@ -1165,7 +1192,7 @@ aside {
       right: 0;
     }
   }
-  #work {
+  #example {
     padding: 0px 80px;
     .tab_inner {
       width: 100%;
@@ -1402,9 +1429,8 @@ aside {
     .slideCountainer {
       width: 100%;
       height: 100vh;
-      // padding: 50px;
       .slider_projects {
-        width: 200%;
+        width: 400%;
         overflow-x: scroll;
         top: 3%;
         .slide_project {
@@ -1450,8 +1476,8 @@ aside {
       }
     }
   }
-  //work
-  #work {
+  //Example
+  #example {
     padding: 100px 20px;
     .tab_inner {
       width: 100%;
@@ -1654,7 +1680,7 @@ aside {
         align-items: flex-start;
         padding: 0;
         .photo {
-          width: 65%;
+          width: 55%;
           img {
             object-fit: cover;
             object-position: center;
@@ -1720,7 +1746,7 @@ aside {
   // project
   #project {
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
     padding: 20px;
     padding-top: 120px;
     h1 {
@@ -1730,7 +1756,7 @@ aside {
       width: 100%;
       height: 100vh;
       .slider_projects {
-        width: 200%;
+        width: 400%;
         top: 3%;
         .slide_project {
           width: 100%;
@@ -1810,8 +1836,8 @@ aside {
     }
   }
 
-  // work
-  #work {
+  // Example
+  #example {
     padding: 90px 20px;
     .tab_inner {
       width: 100%;
@@ -1828,7 +1854,7 @@ aside {
           color: map-get($color, white);
           padding: 5px 0px;
           font-weight: 800;
-          font-size: map-get($font-size, base );
+          font-size: map-get($font-size, base);
           cursor: pointer;
           position: relative;
         }
@@ -1855,7 +1881,7 @@ aside {
                 object-position: center;
               }
               h2 {
-                font-size: map-get($font-size, toosmall );
+                font-size: map-get($font-size, toosmall);
                 text-align: center;
                 color: map-get($color, white);
                 margin-bottom: 10px;
@@ -2125,7 +2151,7 @@ body.bright {
       }
     }
   }
-  #work {
+  #example {
     .tab_inner {
       .btn {
         li {

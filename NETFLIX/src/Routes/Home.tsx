@@ -131,7 +131,7 @@ const BigCover = styled.div`
 `;
 
 const BigTitle = styled.h3`
-  // text-align: center;
+  text-align: center;
   font-size: 28px;
   padding: 20px;
   color: ${(props) => props.theme.white.lighter};

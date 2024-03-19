@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>에뛰드 공식 웹사이트 - Etude</title>
+    <!-- JQuery -->
     <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- fontawesome -->
+    <script
+      defer
       src="https://kit.fontawesome.com/bd0a8925a1.js"
       crossorigin="anonymous"
     ></script>
@@ -42,6 +50,232 @@
               <span></span>
               <span></span>
               <span></span>
+            </div>
+            <div class="mobile_toggle_box">
+              <form action="">
+                <input type="text" placeholder="#립케어 강자! 진저슈가" />
+                <button><img src="./img/magnify.png" alt="magnify" /></button>
+              </form>
+              <ul class="btn">
+                <li class="active" data-index="tab0">MENU</li>
+                <li data-index="tab1">CATEGORY</li>
+              </ul>
+              <div class="tabs">
+                <div id="tab0" class="toggle_menu active">
+                  <ul>
+                    <li class="mega_menu_link">
+                      <a href=""> BRAND </a>
+                      <span class="accordion_button"></span>
+                      <ul class="toggle_menu_list">
+                        <li>
+                          <a href="">About ETUDE</a>
+                        </li>
+                        <li><a href="">뷰티즌</a></li>
+                        <li><a href="">지구를 향한 활동</a></li>
+                      </ul>
+                    </li>
+                    <li class="mega_menu_link">
+                      <a href="">PRODUCT</a>
+                      <span class="accordion_button"></span>
+                      <ul class="toggle_menu_list">
+                        <li><a href="">신제품</a></li>
+                        <li><a href="">카테고리</a></li>
+                      </ul>
+                    </li>
+                    <li class="mega_menu_link"><a href="">MAKEUP LOOK</a></li>
+                    <li class="mega_menu_link">
+                      <a href="">FOUNDATION FACTORY</a>
+                    </li>
+                    <li class="mega_menu_link">
+                      <a href="">@etudeofficial</a>
+                      <span class="accordion_button"></span>
+                      <ul class="toggle_menu_list">
+                        <li><a href="">Instagram</a></li>
+                        <li><a href="">Tiktok</a></li>
+                      </ul>
+                    </li>
+                    <li class="mega_menu_link">
+                      <a href="">STORE</a>
+                      <span class="accordion_button"></span>
+                      <ul class="toggle_menu_list">
+                        <li><a href="">온라인</a></li>
+                        <li><a href="">오프라인</a></li>
+                      </ul>
+                    </li>
+                    <li class="mega_menu_link">
+                      <a href="">CONTACT</a>
+                      <span class="accordion_button"></span>
+                      <ul class="toggle_menu_list">
+                        <li><a href="">공지사항</a></li>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">고객문의</a></li>
+                      </ul>
+                    </li>
+                    <li class="mega_menu_link">
+                      <a href="">MEMBERSHIP</a>
+                      <span class="accordion_button"></span>
+                      <ul class="toggle_menu_list">
+                        <li><a href="">핑크멤버십</a></li>
+                        <li><a href="">뷰티포인트</a></li>
+                      </ul>
+                    </li>
+                    <li class="mega_menu_link">
+                      <a href="">뽀오얀</a>
+                      <span class="accordion_button"></span>
+                      <ul class="toggle_menu_list">
+                        <li><a href="">About 뽀오얀</a></li>
+                        <li><a href="">제품보기</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <div class="brand_store">
+                    <span><em>Shopping at</em>네이버 브랜드 스토어</span>
+                    <ul class="brand_store_list">
+                      <li class="show_dropbox">
+                        <a href="">네이버 브랜드 스토어</a>
+                      </li>
+                      <li class="show_dropbox">
+                        <a href="">올리브영 브랜드관</a>
+                      </li>
+                      <li class="show_dropbox">
+                        <a href="">아모레몰 브랜드관</a>
+                      </li>
+                      <li class="show_dropbox">
+                        <a href="">ETUDE GLOBAL MALL</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div id="tab1" class="toggle_category">
+                  <ul class="category_items">
+                    <li>
+                      <a href="">아이</a>
+                      <div class="category_list_box">
+                        <ul>
+                          <li><a href="">전체</a></li>
+                          <li><a href="">싱글섀도우</a></li>
+                          <li><a href="">아이팔레트</a></li>
+                          <li><a href="">마스카라</a></li>
+                          <li><a href="">아이라이너</a></li>
+                          <li><a href="">아이브로우</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="">립</a>
+                      <div class="category_list_box">
+                        <ul>
+                          <li><a href="">전체</a></li>
+                          <li><a href="">립스틱</a></li>
+                          <li><a href="">틴트</a></li>
+                          <li><a href="">글로스</a></li>
+                          <li><a href="">립펜슬</a></li>
+                          <li><a href="">립케어</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="">페이스</a>
+                      <div class="category_list_box">
+                        <ul>
+                          <li><a href="">전체</a></li>
+                          <li><a href="">베이스.프라이머</a></li>
+                          <li><a href="">쿠션.파운데이션</a></li>
+                          <li><a href="">BB.컨실러</a></li>
+                          <li><a href="">팩트.파우더</a></li>
+                          <li><a href="">컨투어링.하이라이터</a></li>
+                          <li><a href="">블러셔</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="">네일</a>
+                      <div class="category_list_box">
+                        <ul>
+                          <li><a href="">전체</a></li>
+                          <li><a href="">네일컬러</a></li>
+                          <li><a href="">네일케어</a></li>
+                          <li><a href="">네일리무버</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="">스킨케어</a>
+                      <div class="category_list_box">
+                        <ul>
+                          <li><a href="">전체</a></li>
+                          <li><a href="">토너.패드</a></li>
+                          <li><a href="">에멀전</a></li>
+                          <li><a href="">에센스.세럼</a></li>
+                          <li><a href="">크림.밤</a></li>
+                          <li><a href="">미스트</a></li>
+                          <li><a href="">선케어</a></li>
+                          <li><a href="">세트</a></li>
+                          <li><a href="">기타</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="">마스크.팩</a>
+                      <div class="category_list_box">
+                        <ul>
+                          <li><a href="">전체</a></li>
+                          <li><a href="">시트마스크</a></li>
+                          <li><a href="">페이셜팩</a></li>
+                          <li><a href="">패치</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="">클렌저</a>
+                      <div class="category_list_box">
+                        <ul>
+                          <li><a href="">전체</a></li>
+                          <li><a href="">페이셜 클렌징</a></li>
+                          <li><a href="">메이크업 클렌징</a></li>
+                          <li><a href="">필링.스크럽</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="">바디</a>
+                      <div class="category_list_box">
+                        <ul>
+                          <li><a href="">전체</a></li>
+                          <li><a href="">워시</a></li>
+                          <li><a href="">보습</a></li>
+                          <li><a href="">핸드.풋</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="">헤어</a>
+                      <div class="category_list_box">
+                        <ul>
+                          <li><a href="">전체</a></li>
+                          <li><a href="">헤어케어</a></li>
+                          <li><a href="">컬러.스타일링</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="">툴</a>
+                      <div class="category_list_box">
+                        <ul>
+                          <li><a href="">전체</a></li>
+                          <li><a href="">브러쉬</a></li>
+                          <li><a href="">퍼프</a></li>
+                          <li><a href="">화장솜.면봉</a></li>
+                          <li><a href="">속눈썹.브라우</a></li>
+                          <li><a href="">공용기</a></li>
+                          <li><a href="">헤어도구</a></li>
+                          <li><a href="">기타</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </nav>
@@ -197,29 +431,31 @@
               >
               <a class="viewmore" href="">View More</a>
             </div>
-            <div class="gift_mid_sec_items">
-              <div class="gift_item">
-                <div class="gift_photo">
-                  <img src="./img/gift_img1.webp" alt="gift01" />
-                  <span><a href="">톡별</a></span>
+            <div class="gift_item_view_box">
+              <div class="gift_mid_sec_items">
+                <div class="gift_item">
+                  <div class="gift_photo">
+                    <img src="./img/gift_img1.webp" alt="gift01" />
+                    <span><a href="">톡별</a></span>
+                  </div>
                 </div>
-              </div>
-              <div class="gift_item">
-                <div class="gift_photo">
-                  <img src="./img/gift_img2.webp" alt="gift02" />
-                  <span><a href="">톡별</a></span>
+                <div class="gift_item">
+                  <div class="gift_photo">
+                    <img src="./img/gift_img2.webp" alt="gift02" />
+                    <span><a href="">톡별</a></span>
+                  </div>
                 </div>
-              </div>
-              <div class="gift_item">
-                <div class="gift_photo">
-                  <img src="./img/gift_img3.jpeg" alt="gift03" />
-                  <span><a href="">톡별</a></span>
+                <div class="gift_item">
+                  <div class="gift_photo">
+                    <img src="./img/gift_img3.jpeg" alt="gift03" />
+                    <span><a href="">톡별</a></span>
+                  </div>
                 </div>
-              </div>
-              <div class="gift_item">
-                <div class="gift_photo">
-                  <img src="./img/gift_img4.webp" alt="gift04" />
-                  <span><a href="">톡별</a></span>
+                <div class="gift_item">
+                  <div class="gift_photo">
+                    <img src="./img/gift_img4.webp" alt="gift04" />
+                    <span><a href="">톡별</a></span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -228,82 +464,71 @@
         <section id="whatsnew_section">
           <div class="inner">
             <div class="whatsnew_top_sec">
-              <img src="./img/lip_icon.png" alt="lip" />
-              <h1>What's New</h1>
+              <div class="ico_tit">
+                <img src="./img/lip_icon.png" alt="lip" />
+                <h1>What's New</h1>
+              </div>
               <span
                 >주목! 신상이 궁금해? 설레는 신상으로 채워지는 작은 행복</span
               >
               <a class="viewmore" href="">View More</a>
             </div>
-            <div class="whatsnew_items">
-              <div class="whatsnew_item">
-                <div class="whatsnew_item_img">
-                  <img src="./img/whatsnew_item1.jpeg" alt="wnItem01" />
-                </div>
-                <div class="whatsnew_item_desc">
-                  <h2>베이스 앤 오버 립 펜슬 #핑크베이지</h2>
-                  <span class="price">12,000원</span>
-                </div>
-              </div>
-              <div class="whatsnew_item">
-                <div class="whatsnew_item_img">
-                  <img src="./img/whatsnew_item2.jpeg" alt="wnItem02" />
-                </div>
-                <div class="whatsnew_item_desc maskara">
-                  <span class="product_tag">#마스카라 #콤브브러쉬</span>
-                  <h2>래쉬업 콤브 마스카라</h2>
-                  <div class="item_color">
-                    <span></span>
-                    <span></span>
+            <div class="whatsnew_view_box">
+              <div class="whatsnew_items">
+                <div class="whatsnew_item">
+                  <div class="whatsnew_item_img">
+                    <img src="./img/whatsnew_item1.jpeg" alt="wnItem01" />
                   </div>
-                  <span class="price">16,000원</span>
-                </div>
-              </div>
-              <div class="whatsnew_item">
-                <div class="whatsnew_item_img">
-                  <img src="./img/whatsnew_item3.jpeg" alt="wnItem03" />
-                </div>
-                <div class="whatsnew_item_desc">
-                  <span class="product_tag">#WLBB #핑덕러버스 #핑카이브</span>
-                  <h2>하트 플러터 블러셔 4g</h2>
-                  <span class="price">13,000원</span>
-                </div>
-              </div>
-              <div class="whatsnew_item">
-                <div class="whatsnew_item_img">
-                  <img src="./img/whatsnew_item1.jpeg" alt="wnItem01" />
-                </div>
-                <div class="whatsnew_item_desc">
-                  <span class="product_tag">#WLBB #핑덕러버스 #핑카이브</span>
-                  <h2>픽싱 틴트 벨벳 #윈터 스트로베리 3.8g</h2>
-                  <span class="price">14,000원</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="sns_section">
-          <div class="sns_inner">
-            <div class="sns_contents">
-              <div class="tiktok">
-                <h1>ETUDE Official <span>Tiktok</span></h1>
-                <div class="tiktok_content">
-                  <img src="./img/tiktox_video_img.jpeg" alt="tiktok" />
-                  <div class="desc">
-                    <p>FOLLOW US <span>@etude_official</span></p>
+                  <div class="whatsnew_item_desc">
+                    <div class="product_name">
+                      <h2>베이스 앤 오버 립 펜슬 #핑크베이지</h2>
+                    </div>
+                    <span class="price">12,000원</span>
                   </div>
                 </div>
-              </div>
-              <div class="instagram">
-                <div class="sns_ico">
-                  <img src="./img/instagram.png" alt="instagram" />
-                  <img src="./img/facebook.png" alt="facebook" />
-                  <img src="./img/youtube.png" alt="youtube" />
-                  <img src="./img/tiktok.png" alt="tiktok" />
+                <div class="whatsnew_item">
+                  <div class="whatsnew_item_img">
+                    <img src="./img/whatsnew_item2.jpeg" alt="wnItem02" />
+                  </div>
+                  <div class="whatsnew_item_desc maskara">
+                    <div class="product_name">
+                      <span class="product_tag">#마스카라 #콤브브러쉬</span>
+                      <h2>래쉬업 콤브 마스카라</h2>
+                    </div>
+                    <div class="item_color">
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <span class="price">16,000원</span>
+                  </div>
                 </div>
-                <div class="instagram_content">
-                  <h1>ETUDE Official <span>Instagram</span></h1>
-                  <img src="./img/instagram_img.jpeg" alt="instagram_img" />
+                <div class="whatsnew_item">
+                  <div class="whatsnew_item_img">
+                    <img src="./img/whatsnew_item3.jpeg" alt="wnItem03" />
+                  </div>
+                  <div class="whatsnew_item_desc">
+                    <div class="product_name">
+                      <span class="product_tag"
+                        >#WLBB #핑덕러버스 #핑카이브</span
+                      >
+                      <h2>하트 플러터 블러셔 4g</h2>
+                    </div>
+                    <span class="price">13,000원</span>
+                  </div>
+                </div>
+                <div class="whatsnew_item">
+                  <div class="whatsnew_item_img">
+                    <img src="./img/whatsnew_item4.jpeg" alt="wnItem04" />
+                  </div>
+                  <div class="whatsnew_item_desc">
+                    <div class="product_name">
+                      <span class="product_tag"
+                        >#WLBB #핑덕러버스 #핑카이브</span
+                      >
+                      <h2>픽싱 틴트 벨벳 #윈터 스트로베리 3.8g</h2>
+                    </div>
+                    <span class="price">14,000원</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -312,18 +537,22 @@
         <section id="newsevent_section">
           <div class="inner">
             <div class="newsevent_top_sec">
-              <img src="./img/newevent_light_icon.png" alt="light" />
-              <h1>News & Event</h1>
+              <div class="ico_tit">
+                <img src="./img/newevent_light_icon.png" alt="light" />
+                <h1>News & Event</h1>
+              </div>
               <a class="viewmore" href="">View More</a>
             </div>
-            <div class="newsevent_contents">
-              <div class="newsevent_content campaign">
-                <img src="./img/newsevent_img1.jpeg" alt="campaign" />
-                <h1>공병수거 캠페인</h1>
-              </div>
-              <div class="newsevent_content vegan_life">
-                <img src="./img/newsevent_img2.jpeg" alt="vegan" />
-                <h1>모두를 위한 비건 라이프</h1>
+            <div class="newsevent_view_box">
+              <div class="newsevent_contents">
+                <div class="newsevent_content campaign">
+                  <img src="./img/newsevent_img1.jpeg" alt="campaign" />
+                  <h1>공병수거 캠페인</h1>
+                </div>
+                <div class="newsevent_content vegan_life">
+                  <img src="./img/newsevent_img2.jpeg" alt="vegan" />
+                  <h1>모두를 위한 비건 라이프</h1>
+                </div>
               </div>
             </div>
           </div>

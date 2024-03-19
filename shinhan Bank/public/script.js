@@ -31,6 +31,7 @@ const cardMenu = document.querySelectorAll(".card_menu ul li");
 // popular card
 const itemBoxes = document.querySelector(".card_item_boxes");
 const URL = "./card.json";
+
 fetch(URL)
   .then((response) => response.json())
   .then((json) => {
@@ -90,21 +91,6 @@ fetch(URL)
       });
     });
 
-    // cardMenu.forEach((li) => {
-    //   li.addEventListener("click", (e) => {
-    //     e.preventDefault();
-    //     let target = e.target.dataset.index;
-    //     console.log(target);
-    //     if (li.tagName === "LI") {
-    //       for (let i = 0; i < cardMenu.length; i++) {
-    //         if (target == i) {
-    //           cardMenu[i].classList.add("active");
-    //         }
-    //       }
-    //     }
-    //   });
-    // });
-    //recommend slide
     const slides = document.querySelector(".recommend_items");
 
     let recSlideOutput = "";
