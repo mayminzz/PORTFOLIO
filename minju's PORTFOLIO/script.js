@@ -1,10 +1,13 @@
-const header = document.querySelector("header");
-header.addEventListener("mouseover", () => {
-  header.classList.add("bgChange");
-});
-header.addEventListener("mouseleave", () => {
-  header.classList.remove("bgChange");
-});
+//barcode
+const barcode = document.querySelector(".barcode");
+for (let i = 0; i <= 20; i++) {
+  const span = document.createElement("span");
+  const randomWidth = Math.floor(Math.random() * 10 + 1);
+
+  span.style.width = `${randomWidth}px`;
+
+  barcode.appendChild(span);
+}
 
 const toggle = document.querySelector(".toggle");
 const gnb = document.querySelector(".gnb");
@@ -23,6 +26,20 @@ gnbLi.forEach((li) => {
     li.classList.remove("active");
   });
 });
+
+const text = `권민주의 포트폴리오입니다😃 열심히 할 자신있습니다!`;
+const contain = document.querySelector(".sub_text");
+let index = 0;
+
+function typeWriter() {
+  if (index < text.length) {
+    contain.innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, 150); // 100ms마다 한 글자씩 출력
+  }
+}
+
+typeWriter();
 
 //Bright Version
 const toggleBtn = document.querySelector(".toggle_button");
@@ -211,7 +228,6 @@ for (let modal of modals) {
   });
 }
 
-
 const goToTopBtn = document.querySelector("#goToTop");
 
 window.addEventListener("scroll", () => {
@@ -250,8 +266,6 @@ btns.forEach((btn) => {
     });
   });
 });
-
-
 
 // ★라이브러리★  =========================================
 //wow

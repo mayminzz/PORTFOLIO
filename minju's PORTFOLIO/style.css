@@ -124,6 +124,94 @@ header.bgChange {
   background: rgba(10, 10, 10, 0.4);
 }
 
+#loading {
+  background: #222;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: barcode 6s linear both;
+  overflow: hidden;
+}
+#loading .barcode_wrapper > span {
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  letter-spacing: 1rem;
+}
+#loading .barcode_wrapper .barcode {
+  width: 240px;
+  height: 130px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+#loading .barcode_wrapper .barcode::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 300px;
+  height: 2px;
+  background: #f00;
+  animation: scanning 3s 1s linear both;
+}
+#loading .barcode_wrapper .barcode::after {
+  content: "";
+  background: url("./img/heart_black.png") no-repeat center center;
+  background-size: cover;
+  width: 100px;
+  height: 90px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+}
+#loading .barcode_wrapper .barcode span {
+  display: inline-block;
+  margin-right: 5px;
+  border: 1px solid #fff;
+  height: 130px;
+  background: #fff;
+}
+#loading .sub_text {
+  color: #fff;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 24px;
+}
+
+@keyframes barcode {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes scanning {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 50%;
+  }
+  100% {
+    top: 100%;
+  }
+}
 #home {
   width: 100%;
   height: 100vh;
@@ -134,6 +222,7 @@ header.bgChange {
   padding: 120px;
   background: #1d1d1d;
   color: #fff;
+  animation: opacity-image 1s 6s ease-in both;
 }
 #home .title {
   width: 100%;
@@ -154,18 +243,6 @@ header.bgChange {
   word-break: keep-all;
   text-align: center;
 }
-#home .title .title_text::before {
-  content: "";
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 500px rgba(38, 211, 211, 0.5647058824);
-}
 #home .title .title_text > span {
   display: inline-block;
   font-size: 140px;
@@ -178,17 +255,6 @@ header.bgChange {
 }
 #home .title .title_text > span img {
   width: 80%;
-}
-#home .title .subTitle {
-  margin-top: 50px;
-  display: inline-block;
-  padding-left: 100px;
-}
-#home .title .subTitle h1 {
-  font-size: 24px;
-}
-#home .title .subTitle h1 span {
-  color: #26d2d3;
 }
 #home .scroll_down_icon {
   position: absolute;
@@ -222,6 +288,14 @@ header.bgChange {
   margin-top: 5px;
 }
 
+@keyframes opacity-image {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes adjective {
   0% {
     top: 0;
@@ -1752,7 +1826,8 @@ aside .aside_inner .closeBtn .close:hover {
   }
   #project .slideCountainer {
     width: 100%;
-    height: 100vh;
+    height: 105vh;
+    overflow-x: scroll;
   }
   #project .slideCountainer .slider_projects {
     width: 400%;
@@ -1763,6 +1838,7 @@ aside .aside_inner .closeBtn .close:hover {
     flex-direction: column;
     gap: 50px;
     margin-top: 0px;
+    padding: 5px;
   }
   #project .slideCountainer .slider_projects .slide_project .project_photo img {
     width: 100%;
@@ -1790,7 +1866,7 @@ aside .aside_inner .closeBtn .close:hover {
   }
   #project .slideCountainer .pager {
     margin-top: 0;
-    bottom: 2%;
+    bottom: 0%;
   }
   #project #prev,
   #project #next {
@@ -1844,7 +1920,7 @@ aside .aside_inner .closeBtn .close:hover {
     width: 100%;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
     padding-top: 10px;
   }
   #example .tab_inner .tabs .tab_content {
@@ -1856,7 +1932,7 @@ aside .aside_inner .closeBtn .close:hover {
   }
   #example .tab_inner .tabs .tab_content .tab_content_img img {
     width: 100%;
-    height: 65%;
+    height: 60%;
     border-radius: 10px;
     -o-object-fit: cover;
        object-fit: cover;
@@ -1873,7 +1949,7 @@ aside .aside_inner .closeBtn .close:hover {
   #example .tab_inner .tabs .tab_content .card_desc {
     display: block;
     width: 100%;
-    height: 45%;
+    height: 40%;
     top: 60%;
     border-top: 1px solid #ccc;
     border-radius: 0 0 10px 10px;
@@ -1964,6 +2040,12 @@ body.bright {
 }
 .bright header .bright_version span {
   color: #202020;
+}
+.bright #loading .barcode_wrapper > span {
+  color: #000;
+}
+.bright #loading .barcode_wrapper .barcode span {
+  color: #000;
 }
 .bright #home {
   background: #fff;
