@@ -663,7 +663,7 @@ main.blurEffect::before {
   -webkit-text-fill-color: transparent;
 } */
 
-@media all and (max-width: 1000px) {
+@media all and (min-width: 768px) and (max-width: 1000px) {
   .gnb {
     width: 100%;
   }
@@ -675,7 +675,7 @@ main.blurEffect::before {
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   header {
     width: 100%;
     transition: all 0.5s;
@@ -717,6 +717,9 @@ main.blurEffect::before {
   }
   nav .gnb.on {
     display: flex;
+  }
+  .gnb > .gnb_list {
+    pointer-events: none;
   }
   .gnb > .gnb_list > a {
     font-size: 27px;
