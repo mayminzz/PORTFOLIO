@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Inter:wght@200;300;400;600;700;800;900&family=Lemon&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
 $font-size: (
   tiny: 13px,
@@ -58,13 +59,13 @@ header {
   width: 100%;
   padding: 0 150px;
   height: 65px;
+  background: map-get($color, dark);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-family: "Crimson Text", serif;
   position: fixed;
-  background: transparent;
   z-index: 99;
   transition: 0.3s;
   .bright_version {
@@ -145,12 +146,100 @@ header {
 header.bgChange {
   background: rgba(10, 10, 10, 0.4);
 }
-
+//barcode
+#loading {
+  background: #222;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: barcode 6s linear both;
+  overflow: hidden;
+  .barcode_wrapper {
+    > span {
+      display: block;
+      text-align: center;
+      font-size: map-get($font-size, small);
+      color: #fff;
+      letter-spacing: 1rem;
+    }
+    .barcode {
+      width: 240px;
+      height: 130px;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -30px;
+        width: 300px;
+        height: 2px;
+        background: #f00;
+        animation: scanning 3s 1s linear both;
+      }
+      &::after {
+        content: "";
+        background: url("./img/heart_black.png") no-repeat center center;
+        background-size: cover;
+        width: 100px;
+        height: 90px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+      }
+      span {
+        display: inline-block;
+        margin-right: 5px;
+        border: 1px solid #fff;
+        height: 130px;
+        background: #fff;
+      }
+    }
+  }
+  .sub_text {
+    color: #fff;
+    text-align: center;
+    margin-top: 40px;
+    font-size: map-get($font-size, small);
+  }
+}
+@keyframes barcode {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes scanning {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 50%;
+  }
+  100% {
+    top: 100%;
+  }
+}
 // section1 Home
 #home {
   width: 100%;
   height: 100vh;
-  font-family: "Lemon", serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -158,15 +247,16 @@ header.bgChange {
   padding: 120px;
   background: map-get($color, bg1);
   color: map-get($color, white);
+  animation: opacity-image 1s 6s ease-in both;
   .title {
     width: 100%;
-    text-align: right;
+    text-align: left;
     position: relative;
     padding: 60px;
     .title_img {
       position: absolute;
       bottom: -40px;
-      left: 120px;
+      left: 100px;
       img {
         width: 200px;
       }
@@ -174,36 +264,18 @@ header.bgChange {
     .title_text {
       width: 100%;
       word-break: keep-all;
-      position: relative;
-      padding: 20px 0;
-      &::before {
-        content: "";
-        width: 80%;
-        height: 2px;
-        background: map-get($color, hightlight3);
-        position: absolute;
-        bottom: 0;
-        right: 0;
-      }
+      text-align: center;
       > span {
         display: inline-block;
-        font-size: 85px;
+        font-size: 140px;
         animation: upDown 1s ease-in-out both;
+        font-family: "Lemon";
         &.small {
-          font-size: 70px;
+          font-size: 130px;
           margin-right: 20px;
         }
-      }
-    }
-    .subTitle {
-      margin-top: 50px;
-      display: inline-block;
-      padding-left: 100px;
-      h1 {
-        font-size: map-get($font-size, small);
-        font-family: pretendard;
-        span {
-          color: map-get($color, hightlight3);
+        img {
+          width: 80%;
         }
       }
     }
@@ -235,10 +307,17 @@ header.bgChange {
       }
     }
     .scroll_down_text {
-      font-family: pretendard;
       letter-spacing: 0.1em;
       margin-top: 5px;
     }
+  }
+}
+@keyframes opacity-image {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 @keyframes adjective {
@@ -306,47 +385,77 @@ header.bgChange {
 // section2 About
 #about {
   width: 100%;
-  height: 100vh;
   padding: 160px 150px;
-  .about_box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 35px;
-    background: map-get($color, bg2);
-    color: map-get($color, white);
-    .photo {
-      flex: 2;
-      text-align: left;
-      border-radius: 20px;
-      animation: ltr 1s linear both;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+  .about_inner {
+    .about_box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+      background: map-get($color, bg2);
+      color: map-get($color, white);
+      .photo {
+        flex: 2;
+        text-align: left;
         border-radius: 20px;
-      }
-    }
-    .desc {
-      flex: 5;
-      animation: rtl 1s linear both;
-      > h1 {
-        margin-bottom: 20px;
-        font-size: map-get($font-size, medium);
-        > b {
-          color: map-get($color, hightlight3);
+        animation: ltr 1s linear both;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 20px;
         }
       }
-      p {
-        font-size: map-get($font-size, small);
-        margin-bottom: 10px;
-        &:last-of-type {
-          margin-top: 30px;
+      .desc {
+        flex: 4;
+        animation: rtl 1s linear both;
+        > h1 {
+          margin: 20px 0;
+          font-size: map-get($font-size, medium);
+          > b {
+            color: map-get($color, hightlight3);
+          }
         }
-        > b {
-          color: map-get($color, hightlight3);
+        > p {
+          font-size: map-get($font-size, xsmall);
+          margin-bottom: 10px;
+          &:last-of-type {
+            margin-bottom: 20px;
+          }
+          > b {
+            color: map-get($color, hightlight3);
+          }
+        }
+        .experience {
+          width: 95%;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          padding: 20px 0;
+          border-top: 1px solid #ccc;
+          h2 {
+            width: 20%;
+            color: map-get($color, hightlight3);
+            margin-bottom: 15px;
+          }
+          .education {
+            display: flex;
+            flex-direction: column;
+            li {
+              margin-bottom: 15px;
+              span {
+                display: block;
+                color: #ccc;
+                font-size: map-get($font-size, tiny);
+                margin-bottom: 5px;
+              }
+              p {
+                font-size: map-get($font-size, toosmall);
+              }
+            }
+          }
         }
       }
     }
@@ -401,9 +510,10 @@ header.bgChange {
       }
       ul li {
         margin-bottom: 5px;
-        font-size: map-get($font-size, base);
+        font-size: 15px;
         position: relative;
         margin-left: 15px;
+        line-height: 1.4rem;
         &::before {
           content: "";
           display: block;
@@ -429,6 +539,7 @@ header.bgChange {
         }
         img {
           height: 34px;
+          margin-top: 10px;
         }
       }
     }
@@ -438,7 +549,6 @@ header.bgChange {
 //section4 project
 #project {
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -471,7 +581,7 @@ header.bgChange {
     padding-top: 40px;
     animation: btt 1s linear both;
     .slider_projects {
-      width: 200%;
+      width: 400%;
       height: 100vh;
       display: flex;
       flex-direction: row;
@@ -507,8 +617,8 @@ header.bgChange {
               font-size: 40px;
               margin-bottom: 14px;
             }
-            p {
-              font-size: map-get($font-size, xsmall);
+            > p {
+              font-size: map-get($font-size, base);
               color: #ddd;
               margin-bottom: 30px;
             }
@@ -607,8 +717,8 @@ aside {
   background: #222;
   position: absolute;
   top: 0;
-  left: 0; /* Click에 따라서 값이 바뀜 => -100% */
-  opacity: 0; /* Click에 따라서 값이 바뀜 => 0 */
+  left: 0;
+  opacity: 0;
   z-index: 2;
   transform: scale(0);
   display: flex;
@@ -626,15 +736,16 @@ aside {
         margin-bottom: 14px;
         color: #ddd;
       }
-      p {
+      > p {
         font-size: map-get($font-size, xsmall);
         color: #ddd;
-        margin-bottom: 30px;
+        word-break: keep-all;
       }
       .modal_badge {
         display: flex;
         flex-direction: row;
         gap: 10px;
+        padding-top: 30px;
         > span {
           border: 2px solid map-get($color, hightlight4);
           border-radius: 20px;
@@ -663,7 +774,7 @@ aside {
         &:hover {
           background: map-get($color, hightlight5);
         }
-        a {
+        > a {
           color: map-get($color, hightlight3);
         }
       }
@@ -680,16 +791,29 @@ aside {
     }
     .info_sec {
       .overview {
-        margin-bottom: 50px;
+        margin-bottom: 60px;
         h3 {
           font-size: 28px;
-          color: #ddd;
+          color: #fff;
           margin-bottom: 10px;
         }
-        p {
+        > p {
+          width: 100%;
+          display: block;
           font-size: 16px;
-          color: #ccc;
-          line-height: 1.5;
+          color: #bbbbbb;
+          line-height: 1.6;
+          margin-bottom: 30px;
+          word-break: keep-all;
+          em {
+            font-size: 25px;
+            font-style: normal;
+            font-weight: bold;
+          }
+          span {
+            color: map-get($color, hightlight3);
+            text-decoration: underline;
+          }
         }
       }
       .work_info {
@@ -703,16 +827,21 @@ aside {
           color: #ccc;
           display: flex;
           flex-direction: row;
-          line-height: 2.5rem;
+          line-height: 3rem;
           > span {
             margin-right: 30px;
-
             &:nth-child(1) {
               color: map-get($color, hightlight3);
               flex: 2.5;
             }
             &:nth-child(2) {
               flex: 7.5;
+              display: flex;
+              align-items: center;
+              gap: 20px;
+              img {
+                width: 30px;
+              }
             }
           }
         }
@@ -738,8 +867,8 @@ aside {
   }
 }
 
-// work
-#work {
+// example
+#example {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -748,102 +877,193 @@ aside {
   padding: 100px 150px;
   .tab_inner {
     width: 100%;
-    height: 100%;
     position: relative;
-    .btn {
+    .tabs_top {
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
-      li {
+      h2 {
+        font-size: map-get($font-size, xlarge);
         color: map-get($color, white);
-        padding: 10px 25px;
-        font-weight: 700;
-        font-size: 25px;
-        cursor: pointer;
         position: relative;
-        border-top: 2px solid transparent;
-        opacity: 0.7;
-        transition: 0.3s;
-        &:hover,
-        &.active {
-          border-top: 2px solid map-get($color, hightlight1);
-          color: map-get($color, hightlight1);
+        &::before {
+          content: "";
+          display: block;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: map-get($color, orange);
+          position: absolute;
+          right: -15px;
+          bottom: 5px;
+        }
+      }
+      .btn {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        li {
+          width: 100px;
+          height: 40px;
+          text-align: center;
+          line-height: 40px;
+          background: map-get($color, bg2);
+          border: 1px solid map-get($color, hightlight3);
+          margin-right: 20px;
+          border-radius: 5px;
+          transition: 0.3s;
+          a {
+            color: map-get($color, white);
+          }
+          &:hover {
+            background: map-get($color, hightlight3);
+            border: 1px solid transparent;
+            a {
+              color: map-get($color, white);
+            }
+          }
+          &.active {
+            background: map-get($color, hightlight3);
+            border: 1px solid transparent;
+            a {
+              color: map-get($color, white);
+            }
+          }
         }
       }
     }
     .tabs {
       width: 100%;
-      height: 80vh;
       border-radius: 10px;
-      padding: 20px;
-      border: 1px solid #999999;
-      > div {
-        display: none;
-        &.active {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          justify-items: center;
-          align-items: center;
-          gap: 30px;
-          flex-wrap: wrap;
+      padding: 10px 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      .tab_content {
+        width: 31%;
+        height: 200px;
+        position: relative;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: 0.5s;
+        &:hover .card_desc {
+          display: block;
         }
-        > .tab_content {
-          width: 31%;
-          a {
+        &:hover {
+          transform: scale(1.1);
+        }
+        .tab_content_img {
+          width: 100%;
+          height: 100%;
+          img {
             width: 100%;
-            height: 200px;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+          }
+        }
+        .card_desc {
+          display: none;
+          width: 100%;
+          height: 100%;
+          background: map-get($color, white);
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 10px;
+          padding: 10px;
+          transition: all 0.5s;
+          h1 {
+            font-size: map-get($font-size, xsmall);
+            margin-bottom: 15px;
             display: inline-block;
-            margin-bottom: 20px;
-            img {
-              width: 100%;
-              height: 100%;
-              border-radius: 10px;
-              object-fit: cover;
-              object-position: center;
-              margin-bottom: 5px;
-              transition: 0.3s;
-              &:hover {
-                transform: scale(1.1);
+          }
+          .tag {
+            float: right;
+            font-style: italic;
+            text-decoration: underline;
+          }
+          .content_desc {
+            font-size: 15px;
+            margin-bottom: 10px;
+            span {
+              text-decoration: #0acdce underline;
+            }
+          }
+          .use_skill {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            h2 {
+              font-size: map-get($font-size, toosmall);
+              font-weight: 600;
+              margin-bottom: 10px;
+              text-decoration: underline;
+            }
+            .skill_list {
+              li {
+                display: inline-block;
+                margin-bottom: 3px;
+                border-radius: 10px;
+                font-size: 14px;
+                text-align: center;
+                padding: 2px 4px;
+                &.html {
+                  background: #e86b5b;
+                  color: #fff;
+                }
+                &.css {
+                  background: #5998cf;
+                  color: #fff;
+                }
+                &.scss {
+                  background: #ea7be3;
+                  color: #fff;
+                }
+                &.js {
+                  background: #f1b62c;
+                  color: #fff;
+                }
+                &.react {
+                  background: #222;
+                  color: #0acdce;
+                }
+                &.style-component {
+                  background: #b942a7;
+                  color: #fff;
+                }
               }
             }
-            h2 {
-              text-align: center;
-              font-size: map-get($font-size, xsmall);
+          }
+          .website {
+            width: 30%;
+            height: 20%;
+            border: 1px solid transparent;
+            background: map-get($color, hightlight3);
+            border-radius: 10px;
+            text-align: center;
+            line-height: 37px;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            transition: 0.3s;
+            a {
               color: map-get($color, white);
-              margin-bottom: 10px;
-              cursor: pointer;
+            }
+            &:hover {
+              border: 1px solid map-get($color, hightlight3);
+              background: map-get($color, white);
+              a {
+                color: map-get($color, hightlight3);
+              }
             }
           }
-          p {
-            display: none;
-            color: map-get($color, white);
-            font-size: map-get($font-size, xsmall);
-            font-weight: 300;
-          }
-        }
-      }
-    }
-    .work_desc {
-      text-align: center;
-      position: absolute;
-      bottom: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      p {
-        display: none;
-        color: map-get($color, white);
-        font-family: pretendard;
-        font-size: map-get($font-size, toosmall);
-        transition: all 0.3s;
-        line-height: 2rem;
-        word-break: keep-all;
-        span {
-          color: map-get($color, hightlight3);
-        }
-        &.overAppear {
-          display: block;
         }
       }
     }
@@ -1053,8 +1273,14 @@ aside {
         bottom: -50px;
       }
       .title_text {
+        text-align: center;
+        border: 1px solid #f00;
+        &::before {
+          width: 500px;
+          height: 500px;
+        }
         > span {
-          font-size: 70px;
+          font-size: 100px;
           &.small {
             font-size: 60px;
           }
@@ -1072,12 +1298,13 @@ aside {
         height: 400px;
       }
       .desc {
+        flex: 4;
         width: 100%;
         > h1 {
-          font-size: 26px;
+          font-size: 24px;
         }
         p {
-          font-size: 20px;
+          font-size: 18px;
         }
       }
     }
@@ -1165,57 +1392,17 @@ aside {
       right: 0;
     }
   }
-  #work {
+  #example {
     padding: 0px 80px;
     .tab_inner {
       width: 100%;
       height: 100%;
-      .btn {
-        li {
-          color: map-get($color, white);
-          padding: 10px 25px;
-          font-size: 25px;
-          cursor: pointer;
-          position: relative;
+      .tabs_top {
+        h2 {
+          font-size: 40px;
         }
-      }
-      .tabs {
-        border-radius: 10px;
-        height: 850px;
-        > div {
-          display: none;
-          &.active {
-            display: flex;
-            flex-direction: row;
-            gap: 40px;
-            flex-wrap: wrap;
-          }
-          > .tab_content {
-            width: 30%;
-            a {
-              width: 100%;
-              height: 150px;
-              display: inline-block;
-              margin-bottom: 20px;
-            }
-            img {
-              width: 100%;
-              height: 100%;
-              border-radius: 10px;
-              object-fit: cover;
-              object-position: center;
-            }
-            h2 {
-              text-align: center;
-              color: map-get($color, white);
-              margin-bottom: 10px;
-            }
-            p {
-              color: map-get($color, white);
-              font-size: map-get($font-size, xsmall);
-              font-weight: 300;
-            }
-          }
+        .tabs {
+          border-radius: 10px;
         }
       }
     }
@@ -1310,9 +1497,15 @@ aside {
       }
       .title_text {
         > span {
-          font-size: 50px;
+          &.right {
+            width: 60px;
+          }
+          font-size: 90px;
           &.small {
             font-size: 40px;
+          }
+          img {
+            width: 100%;
           }
         }
       }
@@ -1329,14 +1522,14 @@ aside {
         align-items: flex-start;
         padding: 0;
         .photo {
-          width: 400px;
-          height: 500px;
+          width: 50%;
           img {
             width: 100%;
             height: 100%;
           }
         }
         .desc {
+          width: 100%;
           > h1 {
             font-size: map-get($font-size, small);
           }
@@ -1392,7 +1585,6 @@ aside {
   }
   #project {
     width: 100%;
-    overflow-x: scroll;
     padding: 50px;
     padding-top: 70px;
     h1 {
@@ -1401,11 +1593,9 @@ aside {
     }
     .slideCountainer {
       width: 100%;
-      height: 100vh;
-      // padding: 50px;
+      height: 110vh;
       .slider_projects {
-        width: 200%;
-        overflow-x: scroll;
+        width: 400%;
         top: 3%;
         .slide_project {
           width: 100%;
@@ -1450,55 +1640,46 @@ aside {
       }
     }
   }
-  //work
-  #work {
+  #example {
     padding: 100px 20px;
     .tab_inner {
       width: 100%;
       height: 100%;
-      .btn {
-        width: 100%;
-        margin-bottom: 10px;
-        li {
-          color: map-get($color, white);
-          padding: 7px 25px;
-          font-weight: 800;
-          font-size: map-get($font-size, small);
-          cursor: pointer;
-          position: relative;
+      .tabs_top {
+        h2 {
+          font-size: map-get($font-size, large);
         }
       }
       .tabs {
         width: 100%;
-        height: 80vh;
-        padding: 20px;
-        > div {
-          display: none;
-          > .tab_content {
-            width: 30%;
-            a {
-              width: 100%;
-              height: 140px;
-              display: inline-block;
-              margin-bottom: 20px;
-              img {
-                width: 100%;
-                height: 100%;
-                border-radius: 10px;
-                object-fit: cover;
-                object-position: center;
-              }
+        .tab_content {
+          width: 30%;
+          height: 170px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+          .card_desc {
+            h1 {
+              font-size: 15px;
+              margin-bottom: 10px;
+            }
+            .tag {
+              font-size: 14px;
+            }
+            .content_desc {
+              font-size: 13px;
+            }
+            .use_skill {
               h2 {
-                font-size: map-get($font-size, xsmall);
-                text-align: center;
-                color: map-get($color, white);
-                margin-bottom: 10px;
+                font-size: 14px;
+                margin-bottom: 8px;
               }
             }
-            p {
-              color: map-get($color, white);
-              font-size: map-get($font-size, xsmall);
-              font-weight: 300;
+            .website {
+              line-height: 33px;
             }
           }
         }
@@ -1607,18 +1788,22 @@ aside {
         }
       }
       .title_text {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
         &::before {
-          width: 100%;
+          width: 300px;
+          height: 300px;
         }
         > span {
-          font-size: 26px;
+          font-size: 40px;
           margin-bottom: 5px;
+          &.right {
+            width: 25px;
+          }
           &.small {
-            font-size: map-get($font-size, xsmall);
+            font-size: 45px;
             margin-top: 5px;
+          }
+          img {
+            width: 100%;
           }
         }
       }
@@ -1653,19 +1838,29 @@ aside {
         justify-content: flex-start;
         align-items: flex-start;
         padding: 0;
+        gap: 15px;
         .photo {
-          width: 65%;
+          width: 50%;
           img {
             object-fit: cover;
             object-position: center;
           }
         }
         .desc {
+          width: 100%;
           > h1 {
             font-size: map-get($font-size, small);
           }
           p {
             font-size: map-get($font-size, base);
+          }
+          .experience {
+            h2 {
+              flex: 3;
+            }
+            .education {
+              flex: 5;
+            }
           }
         }
       }
@@ -1720,7 +1915,7 @@ aside {
   // project
   #project {
     width: 100%;
-    height: 100vh;
+    height: 105vh;
     padding: 20px;
     padding-top: 120px;
     h1 {
@@ -1728,15 +1923,17 @@ aside {
     }
     .slideCountainer {
       width: 100%;
-      height: 100vh;
+      height: 105vh;
+      overflow-x: scroll;
       .slider_projects {
-        width: 200%;
+        width: 400%;
         top: 3%;
         .slide_project {
           width: 100%;
           flex-direction: column;
           gap: 50px;
           margin-top: 0px;
+          padding: 5px;
           .project_photo {
             img {
               width: 100%;
@@ -1768,8 +1965,7 @@ aside {
         }
       }
       .pager {
-        margin-top: 0;
-        bottom: 2%;
+        display: none;
       }
     }
     #prev,
@@ -1810,81 +2006,60 @@ aside {
     }
   }
 
-  // work
-  #work {
+  // example
+  #example {
     padding: 90px 20px;
     .tab_inner {
       width: 100%;
-      height: 100%;
-      .btn {
-        width: 100%;
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: space-between;
-        padding: 0 5px;
-        li {
-          width: 25%;
-          text-align: center;
-          color: map-get($color, white);
-          padding: 5px 0px;
-          font-weight: 800;
-          font-size: map-get($font-size, base );
-          cursor: pointer;
-          position: relative;
+      .tabs_top {
+        h2 {
+          font-size: map-get($font-size, large);
+        }
+        .btn {
+          li {
+            width: 27%;
+            margin-right: 5px;
+          }
         }
       }
       .tabs {
         width: 100%;
-        padding: 5px;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
         padding-top: 10px;
-        height: 80vh;
-        > div {
-          display: none;
-          > .tab_content {
-            width: 43%;
-            a {
+        .tab_content {
+          width: 100%;
+          height: 60vh;
+          &:hover {
+            transform: scale(1);
+          }
+          .tab_content_img {
+            img {
               width: 100%;
-              height: 100px;
-              display: inline-block;
-              margin-bottom: 18px;
-              img {
-                width: 100%;
-                height: 100%;
-                border-radius: 10px;
-                object-fit: cover;
-                object-position: center;
-              }
-              h2 {
-                font-size: map-get($font-size, toosmall );
-                text-align: center;
-                color: map-get($color, white);
-                margin-bottom: 10px;
-              }
+              height: 60%;
+              border-radius: 10px;
+              object-fit: cover;
+              object-position: top;
+              border-radius: 10px 10px 0 0;
             }
           }
-        }
-      }
-      .work_desc {
-        width: 100%;
-        text-align: center;
-        position: absolute;
-        bottom: 25px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 0 10px;
-        p {
-          display: none;
-          color: map-get($color, white);
-          font-family: pretendard;
-          font-size: 15px;
-          transition: all 0.3s;
-          line-height: 1.4rem;
-          word-break: keep-all;
-          span {
-            color: map-get($color, hightlight3);
+          h2 {
+            font-size: map-get($font-size, toosmall);
+            text-align: center;
+            color: map-get($color, white);
+            margin-bottom: 10px;
           }
-          &.overAppear {
+          .card_desc {
             display: block;
+            width: 100%;
+            height: 40%;
+            top: 60%;
+            border-top: 1px solid #ccc;
+            border-radius: 0 0 10px 10px;
+            h2 {
+              color: #000;
+            }
           }
         }
       }
@@ -1908,7 +2083,12 @@ aside {
   }
 
   #goToTop {
-    display: none;
+    img {
+      &:nth-child(1),
+      &:nth-child(3) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -1988,6 +2168,18 @@ body.bright {
     .bright_version {
       span {
         color: map-get($color, dark);
+      }
+    }
+  }
+  #loading {
+    .barcode_wrapper {
+      > span {
+        color: #000;
+      }
+      .barcode {
+        span {
+          color: #000;
+        }
       }
     }
   }
@@ -2125,37 +2317,37 @@ body.bright {
       }
     }
   }
-  #work {
+  #example {
     .tab_inner {
-      .btn {
-        li {
-          color: #000;
-          &:hover,
-          &.active {
-            border-top: 2px solid map-get($color, hightlight1);
-            color: map-get($color, hightlight1);
+      .tabs_top {
+        h2 {
+          color: map-get($color, dark);
+        }
+        .btn {
+          li {
+            background: #fff;
+            border: 2px solid map-get($color, hightlight3);
+            a {
+              color: map-get($color, hightlight3);
+              font-weight: 600;
+            }
+            &:hover,
+            &.active {
+              background: map-get($color, hightlight3);
+              a {
+                color: #fff;
+              }
+            }
           }
         }
       }
       .tabs {
-        border: 1px solid #000;
-        > div {
-          .tab_content {
-            a {
-              img {
-                border: 1px solid #000;
-              }
-              h2 {
-                color: map-get($color, dark);
-              }
-            }
-            p {
-              color: map-get($color, dark);
-            }
+        .tab_content {
+          border: 1px solid #000;
+          h2 {
+            color: map-get($color, dark);
           }
         }
-      }
-      .work_desc {
         p {
           color: map-get($color, dark);
         }
@@ -2195,7 +2387,7 @@ body.bright {
       }
     }
   }
-  @media screen and (min-width: 320px) and (max-width: 1200px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
     header {
       nav {
         ul.gnb {

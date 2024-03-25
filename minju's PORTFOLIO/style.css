@@ -129,7 +129,7 @@ header.bgChange {
   position: absolute;
   width: 100vw;
   height: 100vh;
-  z-index: 999;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -222,7 +222,7 @@ header.bgChange {
   padding: 120px;
   background: #1d1d1d;
   color: #fff;
-  animation: opacity-image 1s 6s ease-in both;
+  animation: opacity-image 6s ease-in both;
 }
 #home .title {
   width: 100%;
@@ -1529,7 +1529,6 @@ aside .aside_inner .closeBtn .close:hover {
   }
   #project .slideCountainer .slider_projects {
     width: 400%;
-    overflow-x: scroll;
     top: 3%;
   }
   #project .slideCountainer .slider_projects .slide_project {
@@ -1865,8 +1864,7 @@ aside .aside_inner .closeBtn .close:hover {
     padding: 15px;
   }
   #project .slideCountainer .pager {
-    margin-top: 0;
-    bottom: 0%;
+    display: none;
   }
   #project #prev,
   #project #next {

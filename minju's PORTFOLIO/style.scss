@@ -152,7 +152,7 @@ header.bgChange {
   position: absolute;
   width: 100vw;
   height: 100vh;
-  z-index: 999;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -212,16 +212,15 @@ header.bgChange {
 }
 @keyframes barcode {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
   20% {
     opacity: 1;
   }
   80% {
-    opacity: 1;
+    opacity: 0;
   }
   100% {
-    opacity: 0;
     display: none;
   }
 }
@@ -247,7 +246,7 @@ header.bgChange {
   padding: 120px;
   background: map-get($color, bg1);
   color: map-get($color, white);
-  animation: opacity-image 1s 6s ease-in both;
+  animation: opacity-image  6s ease-in both;
   .title {
     width: 100%;
     text-align: left;
@@ -1596,7 +1595,6 @@ aside {
       height: 110vh;
       .slider_projects {
         width: 400%;
-        overflow-x: scroll;
         top: 3%;
         .slide_project {
           width: 100%;
@@ -1966,8 +1964,7 @@ aside {
         }
       }
       .pager {
-        margin-top: 0;
-        bottom: 0%;
+        display: none;
       }
     }
     #prev,

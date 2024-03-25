@@ -86,8 +86,10 @@ const titleTxt = document.querySelector(".title+text");
 
 const delayplus = () => {
   let Delayarr = [];
+  let delayValue = 6;
   for (let i = 0; i < count; i++) {
-    Delayarr.push(i / 5);
+    Delayarr.push(delayValue);
+    delayValue += 0.2;
   }
   spanList(Delayarr);
 };

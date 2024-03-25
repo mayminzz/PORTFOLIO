@@ -1,10 +1,13 @@
-const header = document.querySelector("header");
-header.addEventListener("mouseover", () => {
-  header.classList.add("bgChange");
-});
-header.addEventListener("mouseleave", () => {
-  header.classList.remove("bgChange");
-});
+//barcode
+const barcode = document.querySelector(".barcode");
+for (let i = 0; i <= 20; i++) {
+  const span = document.createElement("span");
+  const randomWidth = Math.floor(Math.random() * 10 + 1);
+
+  span.style.width = `${randomWidth}px`;
+
+  barcode.appendChild(span);
+}
 
 const toggle = document.querySelector(".toggle");
 const gnb = document.querySelector(".gnb");
@@ -23,6 +26,20 @@ gnbLi.forEach((li) => {
     li.classList.remove("active");
   });
 });
+
+const text = `권민주의 포트폴리오입니다😃 열심히 할 자신있습니다!`;
+const contain = document.querySelector(".sub_text");
+let index = 0;
+
+function typeWriter() {
+  if (index < text.length) {
+    contain.innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, 150); // 100ms마다 한 글자씩 출력
+  }
+}
+
+typeWriter();
 
 //Bright Version
 const toggleBtn = document.querySelector(".toggle_button");
@@ -164,8 +181,8 @@ for (let modal of modals) {
     const hashTxt =
       e.currentTarget.parentNode.querySelector(".badge").innerHTML;
     const overview = e.currentTarget.parentNode.querySelector(
-      ".project_info_sec .overview > p"
-    ).innerText;
+      ".project_info_sec .overview"
+    ).innerHTML;
     const workInfo = e.currentTarget.parentNode.querySelector(
       ".project_info_sec .work_info"
     ).innerHTML;
@@ -195,7 +212,7 @@ for (let modal of modals) {
     aside.querySelector(".top_sec > h3").innerText = tit;
     aside.querySelector(".top_sec > p").innerText = subTxt;
     aside.querySelector(".modal_badge").innerHTML = hashTxt;
-    aside.querySelector(".overview > p").innerHTML = overview;
+    aside.querySelector(".overview").innerHTML = overview;
     aside.querySelector(".work_info").innerHTML = workInfo;
     aside.querySelector(".aLink > a").setAttribute("href", aLink);
     aside
@@ -211,26 +228,10 @@ for (let modal of modals) {
   });
 }
 
-//work
-const resultTxt = document.querySelector(".work_desc p");
-const tabItem = document.querySelectorAll(".tab_content");
-
-tabItem.forEach((item) => {
-  item.addEventListener("mouseenter", (e) => {
-    let eventItemTxt = e.currentTarget.querySelector("p").innerHTML;
-    resultTxt.classList.add("overAppear");
-    resultTxt.innerHTML = eventItemTxt;
-  });
-  item.addEventListener("mouseleave", () => {
-    resultTxt.classList.remove("overAppear");
-  });
-});
-
 const goToTopBtn = document.querySelector("#goToTop");
 
 window.addEventListener("scroll", () => {
   let scrollNum = window.scrollY;
-  console.log(scrollNum);
 
   if (scrollNum < 477) {
     goToTopBtn.classList.remove("visible");
@@ -239,18 +240,34 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// ★라이브러리★  =========================================
+//example
 
-//work section
-$(".btn li").click(function () {
-  $(this).addClass("active");
-  $(this).siblings().removeClass("active");
+const btns = document.querySelectorAll(".btn li");
+const tabs = document.querySelectorAll(".tabs .tab_content");
 
-  let result = $(this).attr("data-alt");
-  $(".tabs > div").removeClass("active");
-  $("#" + result).addClass("active");
+btns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetClass = e.currentTarget.querySelector("a").getAttribute("href");
+    const thebtn = e.currentTarget;
+
+    btns.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    e.currentTarget.classList.add("active");
+
+    tabs.forEach((tab) => {
+      if (tab.classList.contains(targetClass)) {
+        tab.style.display = "block";
+      } else {
+        tab.style.display = "none";
+      }
+    });
+  });
 });
 
+// ★라이브러리★  =========================================
 //wow
 let wow = new WOW({
   boxClass: "wow", // default /값받고 싶은 애는 wow라는 클래스를 가지고 있을거야
