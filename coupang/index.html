@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/bd0a8925a1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="signup_form">
+        <div class="logo">
+          <img src="./img/coupang.png" alt="coupang_logo" />
+        </div>
+        <div class="signup_info_box">
+          <h3>회원정보를 입력해주세요</h3>
+          <form action="progress/login">
+            <div class="email_box">
+              <label for="email"></label>
+              <input type="email" id="email" placeholder="아이디(이메일)" />
+            </div>
+            <div class="password_box">
+              <label for="password"></label>
+              <input type="password" id="password" placeholder="비밀번호" />
+            </div>
+            <div class="password_confirm_box">
+              <label for="password_confirm"></label>
+              <input
+                type="password"
+                id="password_confirm"
+                placeholder="비밀번호 확인"
+              />
+            </div>
+            <div class="name_box">
+              <label for="name"></label>
+              <input type="text" id="name" placeholder="이름" />
+            </div>
+            <div class="tel_box">
+              <label for="tel"></label>
+              <input type="tel" id="tel" placeholder="휴대폰 번호" />
+            </div>
+          </form>
+        </div>
+        <div class="signup_agreement_box">
+          <div class="all_agreement">
+            <input id="all_agreement" type="checkbox" />
+            <label for="all_agreement">
+              <i class="fas fa-check"></i>
+              <span>모두 확인하였으며 동의합니다.</span>
+            </label>
+            <p>
+              전체 동의에는 필수 및 선택 정보에 대한 동의가 포함되어 잇으며,
+              개별적으로 동의를 선택 하실 수 있습니다. 선택항목에 대한 동의를
+              거부하시는 경우에도 서비스 이용이 가능합니다.
+            </p>
+          </div>
+          <div class="agreement_box">
+            <div class="wrapper">
+              <input type="checkbox" id="1" />
+              <label for="1">
+                <i class="fas fa-check"></i>
+                <span>[필수] 만 14세 이상입니다</span>
+              </label>
+            </div>
+            <div class="wrapper">
+              <input type="checkbox" id="2" />
+              <label for="2">
+                <i class="fas fa-check"></i>
+                <span>[필수] 쿠팡 이용약관 동의</span>
+              </label>
+              <button>
+                <i class="fas fa-angle-right"></i>
+              </button>
+            </div>
+            <div class="wrapper">
+              <input type="checkbox" id="3" />
+              <label for="3">
+                <i class="fas fa-check"></i>
+                <span>[필수] 전자금융거래 이용약관 동의</span>
+              </label>
+              <button>
+                <i class="fas fa-angle-right"></i>
+              </button>
+            </div>
+            <div class="wrapper">
+              <input type="checkbox" id="4" />
+              <label for="4">
+                <i class="fas fa-check"></i>
+                <span>[필수] 개인정보 수집 및 이용 동의</span>
+              </label>
+              <button>
+                <i class="fas fa-angle-right"></i>
+              </button>
+            </div>
+            <div class="wrapper">
+              <input type="checkbox" id="5" />
+              <label for="5">
+                <i class="fas fa-check"></i>
+                <span>[필수] 개인정보 제3자 제공 동의</span>
+              </label>
+              <button>
+                <i class="fas fa-angle-right"></i>
+              </button>
+            </div>
+            <div class="wrapper">
+              <input type="checkbox" id="6" />
+              <label for="6">
+                <i class="fas fa-check"></i>
+                <span>[선택] 마케팅 목적의 개인정보 수집 및 이용 동의</span>
+              </label>
+              <button>
+                <i class="fas fa-angle-right"></i>
+              </button>
+            </div>
+            <div class="wrapper">
+              <input type="checkbox" id="ad_agree" />
+              <label for="ad_agree">
+                <i class="fas fa-check"></i>
+                <span>[선택] 광고성 정보 수신 동의</span>
+              </label>
+              <button>
+                <i class="fas fa-angle-right"></i>
+              </button>
+            </div>
+            <div class="wrapper subitem">
+              <input type="checkbox" id="email_aree" />
+              <label for="email_aree">
+                <i class="fas fa-check"></i>
+                <span>[선택] 이메일 수신 동의</span>
+              </label>
+            </div>
+            <div class="wrapper subitem">
+              <input type="checkbox" id="sns_agree" />
+              <label for="sns_agree">
+                <i class="fas fa-check"></i>
+                <span>[선택] SMS, SNS 수신 동의</span>
+              </label>
+            </div>
+            <div class="wrapper subitem">
+              <input type="checkbox" id="app_agree" />
+              <label for="app_agree">
+                <i class="fas fa-check"></i>
+                <span>[선택] 앱 푸시 수신 동의</span>
+              </label>
+            </div>
+          </div>
+          <div class="signup_button">
+            <button>동의하고 가입하기</button>
+          </div>
+          <div class="signup_txt">
+            <span>법인 고객이신가요?</span>
+            <span>사업자 회원으로 전용 특가 혜택을 누려보세요.</span>
+            <a
+              href="https://pages.coupang.com/p/92079"
+              class="convenient_signup"
+              >쿠팡비즈 간편가입</a
+            >
+          </div>
+          <div class="copyright">
+            <span>©Coupang Corp. All rights reserved.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
